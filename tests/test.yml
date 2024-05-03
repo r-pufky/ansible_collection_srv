@@ -1,0 +1,6 @@
+---
+- name: Playbook to test hello_motd role.
+  hosts: localhost
+  remote_user: root
+  roles:
+    - hello_motd

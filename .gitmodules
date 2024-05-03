@@ -1,0 +1,15 @@
+[submodule "roles/fonts"]
+	path = roles/fonts
+	url = https://github.com/r-pufky/ansible_fonts
+[submodule "roles/github"]
+	path = roles/github
+	url = https://github.com/r-pufky/ansible_github
+[submodule "roles/overseerr"]
+	path = roles/overseerr
+	url = https://github.com/r-pufky/ansible_overseerr
+[submodule "roles/sonarr"]
+	path = roles/sonarr
+	url = https://github.com/r-pufky/ansible_sonarr
+[submodule "roles/users"]
+	path = roles/users
+	url = https://github.com/r-pufky/ansible_users

@@ -1,0 +1,3 @@
+plugins/modules/demo_hello.py compile-2.7!skip
+plugins/modules/demo_hello.py import-2.7!skip
+plugins/modules/demo_hello.py validate-modules:missing-gplv3-license

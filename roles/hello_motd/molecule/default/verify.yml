@@ -1,0 +1,12 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: debian-12
+  vars:
+    expected_content: "There's a web server here"
+  tasks:
+    - name: check file contents
+      assert:
+        that:
+          - lookup('ansible.builtin.file', '/tmp/motd')|length > 0

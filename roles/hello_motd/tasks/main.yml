@@ -1,0 +1,12 @@
+---
+# tasks file for hello_motd
+- name: Generate greeting and store result
+  demo_hello:
+    name: "{{ friend_name }}"
+  register: demo_greeting
+
+- name: 'store test in /tmp/motd'
+  ansible.builtin.copy:
+    content: "{{ demo_greeting.fact }}\n"
+    dest: '/tmp/motd'
+  become: true
