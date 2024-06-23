@@ -13,3 +13,15 @@
 [submodule "roles/users"]
 	path = roles/users
 	url = https://github.com/r-pufky/ansible_users
+[submodule "roles/debian"]
+	path = roles/debian
+	url = https://github.com/r-pufky/ansible_debian
+[submodule "roles/journald"]
+	path = roles/journald
+	url = https://github.com/r-pufky/ansible_journald
+[submodule "roles/ssh"]
+	path = roles/ssh
+	url = https://github.com/r-pufky/ansible_ssh
+[submodule "roles/ufw"]
+	path = roles/ufw
+	url = https://github.com/r-pufky/ansible_ufw
