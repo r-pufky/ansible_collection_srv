@@ -19,9 +19,15 @@
 [submodule "roles/journald"]
 	path = roles/journald
 	url = https://github.com/r-pufky/ansible_journald
+[submodule "roles/logrotate"]
+	path = roles/logrotate
+	url = https://github.com/r-pufky/ansible_logrotate
 [submodule "roles/ssh"]
 	path = roles/ssh
 	url = https://github.com/r-pufky/ansible_ssh
 [submodule "roles/ufw"]
 	path = roles/ufw
 	url = https://github.com/r-pufky/ansible_ufw
+[submodule "roles/init"]
+	path = roles/init
+	url = https://github.com/r-pufky/ansible_init

@@ -6,7 +6,7 @@ git checkouts. Create the role with a temporary name and move created items
 into the git checkout location.
 
 ``` bash
-ansible-galaxy init --init-path roles example
+ansible-galaxy role init --init-path roles example
 ```
 [Reference](https://goetzrieger.github.io/ansible-collections/5-creating-collections/#adding-content-adding-a-custom-role)
 
@@ -95,6 +95,9 @@ git config push.recurseSubmodules check
 # Update Submodules for Collection
 This will sync the submodule to head (or specified version); these will be
 committed tags to the collection repo.
+
+Changes may be made in the submodule -- be sure to commit these then run this
+command afterwards to ensure the main repo has the correct reference.
 ``` bash
 git submodule update --init  # to pull latest submodule release to head.
 ```
@@ -113,3 +116,16 @@ git config --remove-section submodule.roles/{ROLE}
 Submodule is fully removed and ready to be re-added.
 
 [Reference](https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule)
+
+# Troubleshooting
+
+## Multiple configurations found for 'submodule.roles/{ROLE}'
+The local copy of submodules `.git/config` mis-matches the checked in
+submodules file `.gitmodules`.
+
+Ensure `.git/config` modules match `.gitmodules` or the following warning will
+occur on push:
+``` bash
+warning: {HASH}:.gitmodules, multiple configurations found for 'submodule.roles/{ROLE}'. Skipping second one!
+```
+[Reference](https://stackoverflow.com/questions/51883100/git-submodule-warning-multiple-configurations-found)
