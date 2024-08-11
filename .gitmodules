@@ -31,3 +31,6 @@
 [submodule "roles/init"]
 	path = roles/init
 	url = https://github.com/r-pufky/ansible_init
+[submodule "roles/systemd"]
+	path = roles/systemd
+	url = https://github.com/r-pufky/ansible_systemd

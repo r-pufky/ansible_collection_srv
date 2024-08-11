@@ -1,9 +1,0 @@
----
-- name: 'Test hello_motd example'
-  hosts: 'localhost'
-  tasks:
-    - name: 'run hello_motd'
-      ansible.builtin.import_role:
-        name: r_pufky.srv.hello_motd
-      vars:
-        friend_name: 'Angry Potato'

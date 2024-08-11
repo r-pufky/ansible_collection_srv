@@ -9,14 +9,15 @@ unquoted in paragraphs my_var, my_var_{CUSTOM VALUE}, etc.
 
 ###### type
 Abbreviated datatype
- label   | empty value
----------|------------------
- `int`   | `#` (no empty)
- `float` | `#.#` (no empty)
- `bool`  | `False`, `True` (no empty)
- `str`   | `''`
- `list`  | `[]`
- `dict`  | `{}`
+ label              | empty value
+--------------------|------------------
+ `int`              | `#` (no empty)
+ `float`            | `#.#` (no empty)
+ `bool`             | `False`, `True` (no empty)
+ `str`              | `''`
+ `list`             | `[]`
+ `dict`             | `{}`
+ `{TYPE} or {TYPE}` | multiple types, preferred type first
 
 ###### description
 Use present active voice. Include datatype if it is not implicitly apparent
@@ -38,9 +39,13 @@ whitespace).
 Explicit value including [empty datatypes](#empty)
 
  label              | use
---------------------|-------------------------------------------------------------------------------------
+--------------------|----------------------------------------------------------
  `{VAR WITH SPACE}` | reference other variables
  `{data_type}`      | variable reference (e.g. `{[1]}` (first element of list)
+ `{VAL}`            | variable value substitution.
+ `{REF}`            | use syntax format from references (TIME, SIZE)
+ `{OMIT}`           | behavior if this variable is undefined
+ `^$*{VAL}`         | regex expressions are allowed; use {VAL}
 
 ###### comment
 Additional context/clarification.
@@ -108,6 +113,24 @@ Default: [] (no options).
 Default: ''.
 ```
 
+### Docstring: `Variable`
+Defines an inline extended variable for a variable defined in another file.
+**Only** used for extremely large and complex configurations that have multiple
+overlapping, duplicated options, resulting in 5k+ line default values files.
+
+Extended options are defined in a separate file (with no actual YAML variables)
+and cross-reference the actual configuration location.
+
+See `r_pufky.srv.systemd` defaults for example.
+``` yaml
+# Variable: {VARIABLE} | {TYPE}
+```
+* `variable` defines the variable name.
+
+``` yaml
+# Variable: exec_search_path | str
+```
+
 ### Docstring: `Reference`
 Reference resources for additional information; may contain references to other
 role-related files as well.
@@ -154,6 +177,8 @@ Simple variable with mutiple values.
 #
 # {DOCSTRING VALUES}
 #
+# {DOCSTRING VARIABLE}
+#
 # {DOCSTRING DEFAULT}.
 #
 # {DOCSTRING REFERENCE}
@@ -162,6 +187,9 @@ Simple variable with mutiple values.
 * [`detailed description`](#detailed-description)
 * [`docstring special case`](#docstring-special-case)
 * [`docstring values`](#docstring-values)
+* [`docstring variable`](#docstring-variable):
+  * **optional**
+  * Used for extended variable file definitions. See reference.
 * [`docstring default`](#docstring-default):
   * Always define even if actual value is multi-line.
   * Prefer single-line Default line for this docstring if possible.
@@ -234,6 +262,8 @@ Use standard YAML formatting for nested variable definitions.
   is multi-line.
 * `var example`: working examples of var usage (may include multiple).
 * [`docstring reference`](#docstring-reference)
+* May be unindented if variables are pulled to separate files due to large
+  complex configurations requiring many duplicates. See systemd role.
 
 ``` yaml
 # Manage files within the first directory listed in ssh_client_include.

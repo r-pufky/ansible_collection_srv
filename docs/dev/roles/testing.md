@@ -53,6 +53,15 @@ provisioner:
     defaults:
       interpreter_python: 'auto_silent'  # suppress warnings
       callback_whitelist: 'profile_tasks, timer, yaml'  # output profiling info
+      # To cache facts between molecule steps
+      # fact_caching: jsonfile
+      # fact_caching_connection: /tmp/facts_cache
+      # fact_caching_timeout: 7200
+      #
+      # and set a fact in a molecule step
+      # ansible.builtin.set_fact:
+      #   cacheable: yes
+      #   my_fact: "howdy, world"
     ssh_connection:
       pipelining: false  # does not work with podman
 platforms:
@@ -79,6 +88,7 @@ lint: |
 
 [Reference](https://ansible.readthedocs.io/projects/molecule/examples/podman/)
 
+[Reference](https://stackoverflow.com/questions/65350229/how-do-i-share-variables-facts-between-molecule-playbooks)
 
 # Running Tests
 GHCR.IO requires a github login to download images.
@@ -118,6 +128,20 @@ molecule test --all -- -v
 ```
 
 # Troubleshooting
+## Molecule 'Gathering Facts' Failed
+Molecule state has not been reset; or there is leftover state from individual
+testing steps.
+
+``` bash
+TASK [Gathering Facts] *********************************************************
+fatal: [{HOST}]: UNREACHABLE! => {"changed": false, "msg": "Failed to create temporary directory. In some cases, you may have been able to authenticate and did not have permissions on the target
+```
+
+Fix by resetting molecule:
+``` bash
+molecule reset
+```
+
 ## Molecule removed 'lint' dict option
 Linting move to external commands to maximize flexibility. Provide a string of
 commands to run instead.

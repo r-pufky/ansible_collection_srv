@@ -36,3 +36,8 @@ build_ignore:
 ## Track Project Updates
 * Always link to the latest release (or release page).
 * Set alerts to check for new release (or push notifications) for each role.
+
+## Update collection submodule reference
+Required otherwise the collection will not use the updated module on checkout.
+
+[Update Submodule Reference](creation.md#update-submodules-for-collection)
