@@ -1,15 +1,12 @@
 ---
-# yamllint disable rule:line-length
-# TODO(col): fix linting issues after implementation. Remove comments for
-#     unfilled galaxy options after
 namespace: 'r_pufky'
 name: 'srv'
-version: '0.0.0'  # noqa galaxy[version-incorrect] 0.0.x until everything migrated for release.
+version: '0.0.0'  # noqa galaxy[version-incorrect] 0.0.x until release.
 readme: 'README.md'
 authors:
   - 'Robert Pufky <rpufky@gmail.com> (https://github.com/r-pufky)'
 description: >
-  Serve. Complete infastructure management.
+  Serve. Complete infrastructure management.
 
   Provide bare-metal, virtualization, container, OS, and service management.
 license_file: 'LICENSE'
@@ -19,15 +16,14 @@ tags:
   - 'pve'
   - 'container'
   - 'lxd'
-  - 'infastructure'
+  - 'infrastructure'
   - 'service'
   - 'tools'
   - 'networking'
 dependencies: {}
 
 repository: 'https://github.com/r-pufky/ansible_collection_srv'
-# TODO(col): update when docs are migrated.
-documentation: 'https://github.com/r-pufky/ansible_colection_srv/docs'
+documentation: 'https://github.com/r-pufky/ansible_colection_srv/docs/README.md'
 homepage: 'https://github.com/r-pufky/ansible_collection_srv'
 issues: 'https://github.com/r-pufky/ansible_collection_srv/issues'
 
@@ -37,11 +33,9 @@ issues: 'https://github.com/r-pufky/ansible_collection_srv/issues'
 # uses 'fnmatch' to match the files or directories. Some directories and files
 # like 'galaxy.yml', '*.pyc', '*.retry', and '.git' are always filtered.
 #
-# Mutually exclusive with 'manifest'
-# A dict controlling use of manifest directives used in building the collection
-# artifact. The key 'directives' is a list of MANIFEST.in style L(directives,https://packaging.python.org/en/latest/guides/using-manifest-in/#manifest-in-commands).
-# The key 'omit_default_directives' is a boolean that controls whether the
-# default directives are used. Mutually exclusive with 'build_ignore'
-# manifest: null
+# Mutually exclusive with 'manifest'.
 build_ignore:
   - 'test_archive_v1*'  # github testing archives.
+  - 'sonarr_archive_*'  # sonarr github testing archives.
+  - 'roles/sqlite/molecule/resources/files/*'  # SQL testing DB binaries.
+  - 'ansible.env'  # development ansible environment.

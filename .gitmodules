@@ -34,3 +34,21 @@
 [submodule "roles/systemd"]
 	path = roles/systemd
 	url = https://github.com/r-pufky/ansible_systemd
+[submodule "roles/sqlite"]
+	path = roles/sqlite
+	url = https://github.com/r-pufky/ansible_sqlite
+[submodule "roles/secure_boot"]
+	path = roles/secure_boot
+	url = https://github.com/r-pufky/ansible_secure_boot
+[submodule "roles/firmware"]
+	path = roles/firmware
+	url = https://github.com/r-pufky/ansible_firmware
+[submodule "roles/apt"]
+	path = roles/apt
+	url = https://github.com/r-pufky/ansible_apt
+[submodule "roles/network"]
+	path = roles/network
+	url = https://github.com/r-pufky/ansible_network
+[submodule "roles/cron"]
+	path = roles/cron
+	url = https://github.com/r-pufky/ansible_cron

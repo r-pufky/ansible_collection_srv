@@ -1,8 +1,10 @@
 # Collection Development Guidelines.
-Follow best practices with additional requires set forth in these docs. Assumes
-ansible and collection [environment setup](setup.md).
+Follow best practices with additional requirements set forth in these docs.
 
-[Environment Setup](setup.md)
+Prerequisite:
+* [ansible environment](ansible.md)
+
+[Environment Setup](../environment/README.md)
 
 [Modules](modules.md)
 

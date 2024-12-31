@@ -2,7 +2,7 @@
 
 Documentation for the collection.
 
-Pinned to `0.0.x` until all roles are migrated to ansible `2.16`, migrated from
+Pinned to `0.0.x` until all roles are migrated to ansible `2.18`, migrated from
 private repository, and common functionality is pulled out to the collection
 level; with documentation and template files fleshed out.
 
@@ -20,12 +20,7 @@ level; with documentation and template files fleshed out.
   API/file downloads for isolated testing.
 * Settings are set to sane defaults.
 * no .yamllint, .ansible-lint disable files; document accepted usage.
-* Documentation standardized across all roles, readme's, docstrings, etc.
-  Translate this to `docs/dev/STYLE.md`.
+* [Documentation standardized](docs/README.md).
 
 Those requiring the collection for `2.16` use should manually build and include
 this collection until it is live on galaxy.
-
-## Collection build / 2.16 migration notes
-These will be consolidated and moved into developer documentation as the
-collection progresses to a `1.0.0` release. It is `docs/dev/BUILD.md`.

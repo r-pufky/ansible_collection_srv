@@ -1,65 +1,26 @@
-# Role Docstrings
-Assumes ansible and collection [environment setup](../collection/setup.md).
+# Docstrings: Variables
 
-# Variable Naming
+Prerequisite:
+* [definitions](definitions.md)
 
-## Definitions
-All docstrings conform to **80** characters unless noted; variables are
-unquoted in paragraphs my_var, my_var_{CUSTOM VALUE}, etc.
+### Docstring: `comment`
+Inline comments are **not** a sentence and do not required a period or capital
+to start. Full line comments which are statements do.
+``` yaml
+# Full line statement comment with period.
 
-###### type
-Abbreviated datatype
- label              | empty value
---------------------|------------------
- `int`              | `#` (no empty)
- `float`            | `#.#` (no empty)
- `bool`             | `False`, `True` (no empty)
- `str`              | `''`
- `list`             | `[]`
- `dict`             | `{}`
- `{TYPE} or {TYPE}` | multiple types, preferred type first
-
-###### description
-Use present active voice. Include datatype if it is not implicitly apparent
-what it is. Single line descriptions do not end in `.` unless noted.
-
-###### detailed description
-Detailed description explaining complex usage and edge cases; may be multiple
-paragraphs.
-
-###### description extended
-Multi-line description for values (same as [description](#description)) ends in
-a `.`.
-
-###### var example
-Working examples of var usage (may include multiple examples with one vertical
-whitespace).
-
-###### value
-Explicit value including [empty datatypes](#empty)
-
- label              | use
---------------------|----------------------------------------------------------
- `{VAR WITH SPACE}` | reference other variables
- `{data_type}`      | variable reference (e.g. `{[1]}` (first element of list)
- `{VAL}`            | variable value substitution.
- `{REF}`            | use syntax format from references (TIME, SIZE)
- `{OMIT}`           | behavior if this variable is undefined
- `^$*{VAL}`         | regex expressions are allowed; use {VAL}
-
-###### comment
-Additional context/clarification.
-
-## Docstrings
-All docstrings conform to **80** characters unless noted.
+line of code  # inline comment
+gather_facts: true  # ansible_virtualization_role
+package import for testing  # ansible.builtin.module (specific reason)
+```
 
 ### Docstring: `Special Case`
 Exceptions to `Values`, `Defaults`, or specific rules to follow for them.
 ``` yaml
 Special Case:
-  {VALUE}: {DESCRIPTON}
-  {VALUE}: {DESCRIPTON EXTENDED}
-           {DESCRIPTON EXTENDED}.
+  {VALUE}: {DESCRIPTION}
+  {VALUE}: {DESCRIPTION EXTENDED}
+           {DESCRIPTION EXTENDED}.
 ```
 * Indent minimum of **2** spaces.
 * Vertically align `:` separators.
@@ -103,8 +64,8 @@ Defines a default value.
 ``` yaml
 Default: {VALUE} [({COMMENT})].
 ```
-* [`value`](#value)
-* [`comment`](#comment)
+* [`value`](definitions.md#value)
+* [`comment`](definitions.md#comment)
 * Always end in declarative `.`.
 
 ``` yaml
@@ -138,18 +99,45 @@ role-related files as well.
 Reference:
 * {REFERENCES}
 ```
-* `references`: string reference, **no** `.`; no line-length limit.
+* `references`: string reference
+* no line-length limit.
 
 ``` yaml
 Reference:
 * https://example.com/reference/url/over/80/characters
 ```
 
+### Docstring: `Decision`
+Explain an opinionated or complex decision for implementing a specific way. Be
+clear and concise as to the decision and the supporting reasoning.
+
+``` yaml
+# Decision: {DECISION} - {DESCRIPTION}.
+# Decision: {DECISION} - {DESCRIPTION}
+#     {DESCRIPTION EXTENDED}.
+```
+* `decision`
+* [`description`](definitions.md#description)
+* [`description extended`](definitions.md#description-extended)
+* Insert next to first step in implementation of decision.
+
+### Docstring: `TODO`
+Identifying future work or known issues.
+
+``` yaml
+# TODO({ID}): {DESCRIPTION}.
+# TODO({ID}): {DESCRIPTION EXTENDED}
+#     {DESCRIPTION EXTENDED}.
+```
+* [`id`](#id)
+* [`description`](definitions.md#description)
+* [`description extended`](definitions.md#description-extended)
+
 ### Variable: `single-line`
 ``` yaml
 # {DESCRIPTION}. {DOCSTRING DEFAULT}.
 ```
-* [`description`](#description)
+* [`description`](definitions.md#description)
 * [`docstring default`](#docstring-default)
 
 ``` yaml
@@ -167,7 +155,7 @@ role_filters:
 ```
 
 ### Variable: `multi-line`
-Simple variable with mutiple values.
+Simple variable with multiple values.
 ``` yaml
 # {DESCRIPTION}.
 #
@@ -183,8 +171,8 @@ Simple variable with mutiple values.
 #
 # {DOCSTRING REFERENCE}
 ```
-* [`description`](#description)
-* [`detailed description`](#detailed-description)
+* [`description`](definitions.md#description)
+* [`detailed description`](definitions.md#detailed-description)
 * [`docstring special case`](#docstring-special-case)
 * [`docstring values`](#docstring-values)
 * [`docstring variable`](#docstring-variable):
@@ -234,7 +222,7 @@ Use standard YAML formatting for nested variable definitions.
 #
 # {ROLE}_variable_name:
 #     {TYPE} - {DESCRIPTION}[.]
-#              {DESCRIPTON EXTENDED}.
+#              {DESCRIPTION EXTENDED}.
 #   {VALUE}: {TYPE} - {DESCRIPTION}
 #         {DESCRIPTION EXTENDED}.
 #       {DOCSTRING SPECIAL CASE}
@@ -252,11 +240,12 @@ Use standard YAML formatting for nested variable definitions.
 #
 # {DOCSTRING REFERENCE}
 ```
-* [`description`](#description)
-* [`detailed description`](#detailed-description)
+* [`description`](definitions.md#description)
+* [`description extended`](definitions.md#description-extended)
+* [`detailed description`](definitions.md#detailed-description)
 * [`docstring special case`](#docstring-special-case)
-* [`value`](#value)
-* [`type`](#type)
+* [`value`](definitions.md#value)
+* [`type`](definitions.md#type)
 * [`docstring values`](#docstring-values)
 * [`docstring default`](#docstring-default): always define even if actual value
   is multi-line.
@@ -303,52 +292,4 @@ Use standard YAML formatting for nested variable definitions.
 # Reference:
 # * https://manpages.debian.org/bookworm/openssh-client/ssh_config.5.en.html
 role_multi_complex: []
-```
-
-# Role Parameters
-Defined when variables are used within role tasks which are not included within
-`defaults` definitions.
-
-## Args
-Task consumes these parameters.
-
-``` yaml
-# Args:
-#   {VALUE}: {TYPE} - {DESCRIPTION}
-#         {DESCRIPTION EXTENDED}.
-#       {DOCSTRING SPECIAL CASE}
-#       {DOCSTRING VALUES}
-#       {DOCSTRING DEFAULT}.
-```
-* Appears at file header comment.
-* Follow variable formatting rules.
-
-``` yaml
-# Args:
-#   _overseerr_target: str - full version (vx.x.x) to install
-#   _overseerr_target_dir: str - versioned target install location
-#   _overseerr_target_url: str - download url for target release
-#   _overseerr_archive: str - local versioned archive location
-```
-
-## Generates
-Variables created in tasks intended to be consumed by other tasks.
-
-``` yaml
-# Generates:
-#   {VALUE}: {TYPE} - {DESCRIPTION}
-#         {DESCRIPTION EXTENDED}.
-#       {DOCSTRING SPECIAL CASE}
-#       {DOCSTRING VALUES}
-#       {DOCSTRING DEFAULT}.
-```
-* Appears at file header comment.
-* Follow variable formatting rules.
-
-``` yaml
-# Generates:
-#   _overseerr_current: str - full version (vx.x.x) of current installed
-#       version. '' if there is no detected installed version
-#   _overseerr_target_url: str - download url for target release
-#   _overseerr_existing_installs: stat - for existing versioned directories
 ```

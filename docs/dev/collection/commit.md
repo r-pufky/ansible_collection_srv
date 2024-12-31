@@ -1,5 +1,6 @@
 # Collection Commits
-Assumes ansible and collection [environment setup](setup.md).
+Prerequisite:
+* [ansible environment](../environment/ansible.md)
 
 ## Ensure all TODOs are valid
 ``` bash
@@ -25,7 +26,7 @@ ansible-lint .
 ## Add collection ignore files
 Add files that should not be included in the built collection; such as tests.
 
-{COLLECTION}/galaxy.yml
+`0640 {USER}:{USER}` {COLLECTION}/galaxy.yml
 ``` yaml
 build_ignore:
   - .gitignore

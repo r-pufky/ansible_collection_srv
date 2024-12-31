@@ -1,14 +1,16 @@
 # Role Development Guidelines.
-Follow best practices with additional requires set forth in these docs. Assumes
-ansible and collection [environment setup](../collection/setup.md).
+Follow best practices with additional requirements set forth in these docs.
 
-[Creation & Submodules](creation.md)
+Prerequisite:
+* [ansible environment](ansible.md)
 
-[Docstrings](docstrings.md)
+[Roles are Submodules](submodules.md)
+
+[Docstrings](../docstrings/definitions.md)
 
 [Linting](linting.md)
 
-[Testing](testing.md)
+[Testing](testing/molecule.md)
 
 [Committing](commit.md)
 
