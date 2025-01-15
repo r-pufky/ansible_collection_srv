@@ -67,10 +67,11 @@ Explicit value including [empty datatypes](#type).
 --------------------|----------------------------------------------------------
  `{VAR WITH SPACE}` | reference other variables
  `{data_type}`      | variable reference (e.g. `{[1]}` (first element of list))
- `{VAL}`            | variable value substitution.
+ `{VAL}`            | variable value substitution
  `{REF}`            | use syntax format from references (TIME, SIZE)
  `{OMIT}`           | behavior if this variable is undefined
  `^$*{VAL}`         | regex expressions are allowed; use {VAL}
+ `N/A`              | not applicable
 
 ###### comment
 Additional context/clarification.

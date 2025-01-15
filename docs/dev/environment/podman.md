@@ -57,7 +57,11 @@ usermod --add-subuids 100000-165535 --add-subgids 100000-165535 {USER}
 registries = ['ghcr.io']
 unqualified-search-registries=['ghcr.io']
 ```
+
 The github container repository requires logging in with your github account.
+``` bash
+podman login
+```
 
 [Reference](https://halukkarakaya.medium.com/how-to-configure-default-search-registries-in-podman-ea930289692)
 

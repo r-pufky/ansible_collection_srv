@@ -63,9 +63,13 @@ Values:
 Defines a default value.
 ``` yaml
 Default: {VALUE} [({COMMENT})].
+Default: N/A ({COMMENT}).
 ```
 * [`value`](definitions.md#value)
 * [`comment`](definitions.md#comment)
+* [`N/A`](definitions.md#value)
+* Required values (wiht no defaults) must use `N/A` with a comment; these
+  should be exceptions (for instance with systemd).
 * Always end in declarative `.`.
 
 ``` yaml
@@ -132,6 +136,22 @@ Identifying future work or known issues.
 * [`id`](#id)
 * [`description`](definitions.md#description)
 * [`description extended`](definitions.md#description-extended)
+
+### Docstring: `File`
+Show file location, user, permissions and contents. May be in diff format.
+
+`0755 root root` /file/location.yml
+``` yaml
+---
+some_yaml:
+  listing
+```
+
+`0644 {USER} {USER}` /file/with/diff.conf
+``` diff
+-old line
++new line
+```
 
 ### Variable: `single-line`
 ``` yaml

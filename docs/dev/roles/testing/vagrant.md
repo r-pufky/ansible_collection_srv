@@ -61,7 +61,7 @@ provisioner:
   #     {IMAGE}-{TEST}:
   #       setup_variables: true
 platforms:
-  - name: '{IMAGE}-{TEST}'  # debian-bookworm64-vm-test
+  - name: '{ROLE}-{IMAGE}-vm-{TEST}'  # debian-bookworm64-vm-test
     box: 'debian/bookworm64'
     memory: 4096
     cpus: 2

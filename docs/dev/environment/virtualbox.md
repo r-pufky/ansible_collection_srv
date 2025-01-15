@@ -10,7 +10,8 @@ Prerequisite:
 ``` bash
 source {VENV}/bin/activate
 pamac install virtualbox  # no additional dependencies
-pamac install linux$(mhwd-kernel -l)-virtualbox-host-modules  # current kernel
+mhwd-kernel -li  # show running kernel version
+pamac install linux{VERSION}-virtualbox-host-modules
 pip install molecule-plugins[virtualbox]
 gpasswd -a ${USER} vboxusers  # add user to virtualbox users
 ```
@@ -66,7 +67,8 @@ WARNING: The vboxdrv kernel module is not loaded. Either there is no module
 ```
 
 ``` bash
-pamac install linux$(mhwd-kernel -l)-virtualbox-host-modules  # for current kernel
+mhwd-kernel -li
+pamac install linux{VERSION}-virtualbox-host-modules  # for current kernel
 reboot
 ```
 
