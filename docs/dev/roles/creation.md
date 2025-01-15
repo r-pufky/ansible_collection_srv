@@ -61,9 +61,7 @@ module used.
 ``` yaml
 ---
 collections:
-  # https://docs.ansible.com/ansible/latest/collections/community/general/
-  # ufw, timezone, locale_gen
-  - community.general
+  - 'community.general'  # https://docs.ansible.com/ansible/latest/collections/community/general/
 
 roles: []
 ```

@@ -54,9 +54,6 @@ Vars listed below are required if used. All role vars `{ROLE}_role_` prefixed.
 {ROLE}_role_packages:
   - 'ssh'  # meta package provides both ssh and sshd.
 
-# Default state for apt package installation. See ansible.builtin.apt.
-{ROLE}_role_package_state: 'latest'
-
 # Default random data.
 {ROLE}_role_generated_api_key: '{{ lookup("ansible.builtin.password", "/dev/null", chars=["ascii_letters", "digits"], length=32) }}'
 ```

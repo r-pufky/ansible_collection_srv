@@ -52,3 +52,6 @@
 [submodule "roles/cron"]
 	path = roles/cron
 	url = https://github.com/r-pufky/ansible_cron
+[submodule "roles/zfs"]
+	path = roles/zfs
+	url = https://github.com/r-pufky/ansible_zfs

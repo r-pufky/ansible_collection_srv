@@ -16,7 +16,8 @@ pip install molecule-plugins[vagrant]
 ## Set alternative storage location (optional)
 Developing on vagrant will thrash disk especially when running molecule with
 large (multi-GB) reads and writes. Relocate high-use directories to a disk that
-can handle high wear. Prefer to config change as this enables quick use without configuration changes.
+can handle high wear. Prefer to config change as this enables quick use without
+configuration changes.
 
 Move and link user directories to an alternative location:
 ``` bash
