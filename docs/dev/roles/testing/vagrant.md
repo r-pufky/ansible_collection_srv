@@ -45,14 +45,21 @@ provisioner:
       interpreter_python: 'auto_silent'  # suppress warnings
       callback_whitelist: 'profile_tasks, timer, yaml'  # output profiling info
       # To cache facts between molecule steps:
-      # fact_caching: jsonfile
-      # fact_caching_connection: /tmp/facts_cache
-      # fact_caching_timeout: 7200
+      #   fact_caching: 'jsonfile'
+      #   fact_caching_connection: '/tmp/facts_cache'
+      #   fact_caching_timeout: 7200
       #
-      # and set a fact (converge.yml):
-      # ansible.builtin.set_fact:
-      #   cacheable: yes
-      #   my_fact: "howdy, world"
+      # cache a fact between steps:
+      #   ansible.builtin.set_fact:
+      #     cacheable: yes
+      #     my_fact: "howdy, world"
+      #
+      # always assert cache is not expired before using and document with args:
+      #   - name: 'assert fact_caching not expired'
+      #     ansible.builtin.assert:
+      #       that:
+      #         - '_test_cached_fact is defined'
+      #       fail_msg: 'fact_caching has expired; re-run prepare.'
   # inventory:  # Set all base testing configuration here.
   #   group_vars:
   #     all:
