@@ -58,3 +58,6 @@
 [submodule "roles/nfs"]
 	path = roles/nfs
 	url = https://github.com/r-pufky/ansible_nfs
+[submodule "roles/plex"]
+	path = roles/plex
+	url = https://github.com/r-pufky/ansible_plex

@@ -17,6 +17,18 @@ ansible-galaxy collection install
 
 Collection **will** need to be rebuilt if changes (files or tests) were made.
 
+### Development Testing
+For rapid testing without rebuilding between tests; use a symlink to the fully
+checked out collection. Only use on development machines.
+
+``` bash
+ln -s /var/git/ansible_collection_srv ~/.ansible/collections/ansible_collections/r_pufky/srv
+ln -s /var/git/ansible_collection_srv /var/venv/ansible_collection_srv/.ansible/collections/ansible_collections/r_pufky/srv
+```
+
+Overrides the built collection with the currently development head. **Remove**
+link before using production collections so the released version is installed.
+
 ## Running Tests
 Alway [build and install](#build-and-install-local-collection) before running
 tests.

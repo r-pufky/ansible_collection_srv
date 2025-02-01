@@ -91,7 +91,7 @@ Each pattern requires a separate molecule test setup.
 * Do not re-test encapsulated roles and collections.
 * Decisions **not** to test a task must contain a
   [`Decision`](../../docstrings/variables.md#docstring-decision).
-* Test before changes and **disable** `test_sequence` when teseting new
+* Test before changes and **disable** `test_sequence` when testing new
   changes.
 
 [Reference](https://github.com/ansible/molecule/issues/4348)
@@ -165,6 +165,17 @@ task subdirectory or file may be used if needed for additional clarification.
 
     - name: '{TEST} | verify | sources | stat debian.sources'
       ...
+```
+
+#### Debug Directives
+Use verbosity to keep debug statements in production releases; and var to
+cleanly print complex variables.
+
+``` yaml
+- name: '{TASK} | debug verbose'
+  ansible.builtin.debug:
+    var: role_var  # auto jinja escaped
+    verbosity: 2  # corresponds to -v count; 0 always displays
 ```
 
 ## Execute Tests
@@ -283,3 +294,12 @@ lint: |
   flake8  # Pything linting
 ```
 [Reference](https://github.com/ansible/molecule/pull/3802/files)
+
+### Role changes are not being used during tests
+Role likely depends on changes in the collection that are not released yet.
+
+[build](../../collection/testing.md#build-and-install-local-collection).
+
+Or
+
+[link](../../collection/testing.md#development-testing).
