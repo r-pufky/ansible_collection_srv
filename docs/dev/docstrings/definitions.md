@@ -3,12 +3,14 @@ All styles are required unless noted for specific definitions.
 
 [Variables](variables.md)
 
-[Task Parameters](parameters.md)
+[Task Parameters](task_parameters.md)
 
 ## Style
 * **80** character width.
 * **Single** vertical spacing between sections.
 * **4** spaces for a continued line.
+* **.** for all lists, docstrings, comments; unless line hits exactly **80**
+  characters.
 * Variables **unquoted** in paragraphs:
   ``` yaml
   # this is test containing role_variables and

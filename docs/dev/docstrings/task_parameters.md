@@ -7,7 +7,7 @@ Task consumes these parameters.
 
 ``` yaml
 # Args:
-#   {VALUE}: {TYPE} - {DESCRIPTION}
+#   {VALUE}: {TYPE} - {DESCRIPTION}.
 #         {DESCRIPTION EXTENDED}.
 #       {DOCSTRING SPECIAL CASE}
 #       {DOCSTRING VALUES}
@@ -37,7 +37,7 @@ same role.
 
 ``` yaml
 # Generates:
-#   {VALUE}: {TYPE} - {DESCRIPTION}
+#   {VALUE}: {TYPE} - {DESCRIPTION}.
 #         {DESCRIPTION EXTENDED}.
 #       {DOCSTRING SPECIAL CASE}
 #       {DOCSTRING VALUES}
@@ -70,7 +70,7 @@ Only list variables in `Exports` if they are both **generated** and
 
 ``` yaml
 # Exports:
-#   {VALUE}: {TYPE} - {DESCRIPTION}
+#   {VALUE}: {TYPE} - {DESCRIPTION}.
 #         {DESCRIPTION EXTENDED}.
 #       {DOCSTRING SPECIAL CASE}
 #       {DOCSTRING VALUES}

@@ -61,3 +61,6 @@
 [submodule "roles/plex"]
 	path = roles/plex
 	url = https://github.com/r-pufky/ansible_plex
+[submodule "roles/nzbget"]
+	path = roles/nzbget
+	url = https://github.com/r-pufky/ansible_nzbget

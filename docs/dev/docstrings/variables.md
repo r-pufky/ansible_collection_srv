@@ -18,8 +18,8 @@ package import for testing  # ansible.builtin.module (specific reason)
 Exceptions to `Values`, `Defaults`, or specific rules to follow for them.
 ``` yaml
 Special Case:
-  {VALUE}: {DESCRIPTION}
-  {VALUE}: {DESCRIPTION EXTENDED}
+  {VALUE}: {DESCRIPTION}.
+  {VALUE}: {DESCRIPTION EXTENDED}.
            {DESCRIPTION EXTENDED}.
 ```
 * Indent minimum of **2** spaces.
@@ -29,17 +29,17 @@ Special Case:
 
 ``` yaml
 Special Case:
-  ~: user home directory
-  *: Tokens as specified from TOKENS section (see reference)
-  *: ENVIRONMENT VARIABLES as specified from tokens section (see reference)
+  ~: user home directory.
+  *: Tokens as specified from TOKENS section (see reference).
+  *: ENVIRONMENT VARIABLES as specified from tokens section (see reference).
 ```
 
 ### Docstring: `Values`
 Explicit accepted default values.
 ``` yaml
 Values:
-  {VALUE}: {DESCRIPTON}
-  {VALUE}: {DESCRIPTON EXTENDED}
+  {VALUE}: {DESCRIPTON}.
+  {VALUE}: {DESCRIPTON EXTENDED}.
            {DESCRIPTON EXTENDED}.
 ```
 * Indent minimum of **2** spaces.
@@ -50,13 +50,13 @@ Values:
 
 ``` yaml
 Values:
-           none: explicitly disable use of an authentication agent
-             '': no default system agent (default)
-  SSH_AUTH_SOCK: get socket location from SSH_AUTH_SOCK environment variable
+           none: explicitly disable use of an authentication agent.
+             '': no default system agent (default).
+  SSH_AUTH_SOCK: get socket location from SSH_AUTH_SOCK environment variable.
              $*: strings beginning with $ will be treated as environment
                  variable containing the location of the socket.
                      Values:
-                       {VALUE}: additional values for value element
+                       {VALUE}: additional values for value element.
 ```
 
 ### Docstring: `Default`
@@ -117,7 +117,7 @@ clear and concise as to the decision and the supporting reasoning.
 
 ``` yaml
 # Decision: {DECISION} - {DESCRIPTION}.
-# Decision: {DECISION} - {DESCRIPTION}
+# Decision: {DECISION} - {DESCRIPTION}.
 #     {DESCRIPTION EXTENDED}.
 ```
 * `decision`
@@ -130,7 +130,7 @@ Identifying future work or known issues.
 
 ``` yaml
 # TODO({ID}): {DESCRIPTION}.
-# TODO({ID}): {DESCRIPTION EXTENDED}
+# TODO({ID}): {DESCRIPTION EXTENDED}.
 #     {DESCRIPTION EXTENDED}.
 ```
 * [`id`](#id)
@@ -209,18 +209,18 @@ Simple variable with multiple values.
 # Overrides SSH_AUTH_SOCK environment variable.
 #
 # Special Case:
-#   ~: user home directory
-#   *: Tokens as specified from TOKENS section (see reference)
-#   *: ENVIRONMENT VARIABLES as specified from tokens section (see reference)
+#   ~: user home directory.
+#   *: Tokens as specified from TOKENS section (see reference).
+#   *: ENVIRONMENT VARIABLES as specified from tokens section (see reference).
 #
 # Values:
-#            none: explicitly disable use of an authentication agent
-#              '': no default system agent (default)
-#   SSH_AUTH_SOCK: get socket location from SSH_AUTH_SOCK environment variable
+#            none: explicitly disable use of an authentication agent.
+#              '': no default system agent (default).
+#   SSH_AUTH_SOCK: get socket location from SSH_AUTH_SOCK environment variable.
 #              $*: strings beginning with $ will be treated as environment
 #                  variable containing the location of the socket.
 #                      Values:
-#                        {VALUE}: additional values for value element
+#                        {VALUE}: additional values for value element.
 #
 # Default: ''.
 #
@@ -241,15 +241,19 @@ Use standard YAML formatting for nested variable definitions.
 # {DOCSTRING SPECIAL CASE}
 #
 # {ROLE}_variable_name:
-#     {TYPE} - {DESCRIPTION}[.]
+#     {TYPE} - {DESCRIPTION}.
 #              {DESCRIPTION EXTENDED}.
-#   {VALUE}: {TYPE} - {DESCRIPTION}
+#   {VALUE}: {TYPE} - {DESCRIPTION}.
 #         {DESCRIPTION EXTENDED}.
+#
+#         {DOCSTRING REFERENCE}
 #       {DOCSTRING SPECIAL CASE}
 #       {DOCSTRING VALUES}
 #       {DOCSTRING DEFAULT}.
-#     {VALUE}: {TYPE} - {DESCRIPTION}
+#     {VALUE}: {TYPE} - {DESCRIPTION}.
 #           {DESCRIPTION EXTENDED}.
+#
+#           {DOCSTRING REFERENCE}
 #         {DOCSTRING SPECIAL CASE}
 #         {DOCSTRING VALUES}
 #         {DOCSTRING DEFAULT}.
@@ -279,16 +283,19 @@ Use standard YAML formatting for nested variable definitions.
 #
 # role_multi_complex:
 #     list of dict - definitions for local configuration.
-#   - config: str - name of local config ({INCLUDE}/{CONFIG})
-#     state: str - whether config should be managed or removed
+#   - config: str - name of local config ({INCLUDE}/{CONFIG}).
+#     state: str - whether config should be managed or removed.
 #           Additional description details here.
+#
+#           Reference:
+#           * https://example.com
 #         Values:
 #           present: manage configuration
 #            absent: remove configuration
 #         Default: 'present'.
-#     options: dict - ssh_config options to manage (per ssh_config options)
-#       file: str - file location
-#       mode: str - octal file permissions
+#     options: dict - ssh_config options to manage (per ssh_config options).
+#       file: str - file location.
+#       mode: str - octal file permissions.
 #           Default: '0644'.
 #
 # role_multi_complex:

@@ -23,8 +23,10 @@ checked out collection. Only use on development machines.
 
 ``` bash
 ln -s /var/git/ansible_collection_srv ~/.ansible/collections/ansible_collections/r_pufky/srv
-ln -s /var/git/ansible_collection_srv /var/venv/ansible_collection_srv/.ansible/collections/ansible_collections/r_pufky/srv
 ```
+* Remove cached collection if needed
+* `/var/venv/ansible_collection_srv/.ansible/collections/ansible_collections/r_pufky/srv`
+  may be removed as well.
 
 Overrides the built collection with the currently development head. **Remove**
 link before using production collections so the released version is installed.
