@@ -17,20 +17,6 @@ ansible-galaxy collection install
 
 Collection **will** need to be rebuilt if changes (files or tests) were made.
 
-### Development Testing
-For rapid testing without rebuilding between tests; use a symlink to the fully
-checked out collection. Only use on development machines.
-
-``` bash
-ln -s /var/git/ansible_collection_srv ~/.ansible/collections/ansible_collections/r_pufky/srv
-```
-* Remove cached collection if needed
-* `/var/venv/ansible_collection_srv/.ansible/collections/ansible_collections/r_pufky/srv`
-  may be removed as well.
-
-Overrides the built collection with the currently development head. **Remove**
-link before using production collections so the released version is installed.
-
 ## Running Tests
 Alway [build and install](#build-and-install-local-collection) before running
 tests.
@@ -46,8 +32,31 @@ ansible-test units
 
 [Reference](https://docs.ansible.com/ansible/latest/dev_guide/testing_running_locally.html#testing-running-locally)
 
-
 ## Troubleshooting
+
+### Testing in roles uses old files
+Collection cache is outdated. Clear the static collection cache to force
+rebuild with update versions, or link to development repository.
+
+Clear build cache:
+``` bash
+rm -rfv ~/.ansible/collections/ansible_collections/r_pufky/srv
+```
+
+#### Development Testing
+For rapid testing without rebuilding between tests; use a symlink to the fully
+checked out collection. Only use on development machines. This will likely
+cause issues later on.
+
+``` bash
+ln -s /var/git/ansible_collection_srv ~/.ansible/collections/ansible_collections/r_pufky/srv
+```
+* Remove cached collection if needed
+* `/var/venv/ansible_collection_srv/.ansible/collections/ansible_collections/r_pufky/srv`
+  may be removed as well.
+
+Overrides the built collection with the currently development head. **Remove**
+link before using production collections so the released version is installed.
 
 ### Only Localhost is Available
 Host inventory not detected when running collection tests.
