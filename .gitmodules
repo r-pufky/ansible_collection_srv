@@ -64,3 +64,6 @@
 [submodule "roles/nzbget"]
 	path = roles/nzbget
 	url = https://github.com/r-pufky/ansible_nzbget
+[submodule "roles/radarr"]
+	path = roles/radarr
+	url = https://github.com/r-pufky/ansible_radarr
