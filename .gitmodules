@@ -67,3 +67,6 @@
 [submodule "roles/radarr"]
 	path = roles/radarr
 	url = https://github.com/r-pufky/ansible_radarr
+[submodule "roles/lidarr"]
+	path = roles/lidarr
+	url = https://github.com/r-pufky/ansible_lidarr
