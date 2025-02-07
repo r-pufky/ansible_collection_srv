@@ -73,3 +73,6 @@
 [submodule "roles/readarr"]
 	path = roles/readarr
 	url = https://github.com/r-pufky/ansible_readarr
+[submodule "roles/whisparr"]
+	path = roles/whisparr
+	url = https://github.com/r-pufky/ansible_whisparr
