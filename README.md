@@ -22,5 +22,5 @@ level; with documentation and template files fleshed out.
 * no .yamllint, .ansible-lint disable files; document accepted usage.
 * [Documentation standardized](docs/README.md).
 
-Those requiring the collection for `2.16` use should manually build and include
+Those requiring the collection for `2.18` use should manually build and include
 this collection until it is live on galaxy.

@@ -1,10 +1,16 @@
 ---
+# TODO(collection): enable when modules/plugins are added.
 - name: Playbook for testing hello_motd
   hosts: localhost
-
+#
+#   tasks:
+#     - name: Import hello_motd
+#       ansible.builtin.import_role:
+#         name: r_pufky.srv.hello_motd
+#       vars:
+#         hello_motd_friend_name: "Angry Potato"
   tasks:
-    - name: Import hello_motd
-      ansible.builtin.import_role:
-        name: r_pufky.srv.hello_motd
-      vars:
-        hello_motd_friend_name: "Angry Potato"
+    - name: 'NOOP'
+      ansible.builtin.assert:
+        that:
+          - 1 == 1

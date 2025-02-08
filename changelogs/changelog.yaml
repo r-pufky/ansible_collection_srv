@@ -1,56 +1,50 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
-  0.0.0:
-    release_date: '2024-01-01'
-    codename: ''
+  0.0.1:
+    release_date: '2025-02-08'
+    codename: 'media'
     changes:
-      release_summary: This is the initial White Rabbit release. Enjoy!
+      release_summary: 'Core media services added.'
       major_changes:
-        - The authentication method handling has been rewritten.
+        - '*arr services migrated.'
+        - 'foundational roles migrated to support core services.'
+        - 'all roles are now unit tested.'
+        - 'all roles confirm to ansible-lint, yamllint standards.'
       minor_changes:
-        - foo - Module can now reformat hard disks without asking.
-        - bob lookup - Makes sure Bob isn't there multiple times.
+        - 'removed unused build ignores in galaxy.'
       breaking_changes:
-        - Due to the security bug in the post module, the module no longer
-          accepts the password option. Please stop using the option and change
-          any password you ever supplied to the module.
+        - 'All roles before collection migration have changed.'
       deprecated_features:
-        - foo - The bar option has been deprecated. Use the username option
-          instead.
-        - send_request - The quic option has been deprecated. Use the protocol
-          option instead.
+        - 'N/A'
       removed_features:
-        - foo - The baz option has been removed. It has never been used anyway.
+        - 'N/A'
       security_fixes:
-        - post - The module accidentally sent your password in plaintext to all
-          servers it could find.
+        - 'N/A'
       bugfixes:
-        - post - The module made PUT requests instead of POST requests.
-        - get - The module will no longer crash if it received invalid JSON
-          data.
-    modules:
-      - name: head
-        description: Make a HEAD request
-        namespace: 'net_tools.rest'
-      - name: echo
-        description: Echo params
-        namespace: ''
-    plugins:
-      lookup:
-        - name: reverse
-          description: Reverse magic
-          namespace: null
-      inventory:
-        - name: docker
-          description: Inventory plugin for docker containers
-          namespace: null
-    objects:
-      role:
-        - name: install_reqs
-          description: Install all requirements of this collection
-          namespace: null
-      playbook:
-        - name: wipe_personal_data
-          description: Wipes all personal data from the database
-          namespace: null
+        - 'N/A'
+#    modules:
+#      - name: head
+#        description: Make a HEAD request
+#        namespace: 'net_tools.rest'
+#      - name: echo
+#        description: Echo params
+#        namespace: ''
+#    plugins:
+#      lookup:
+#        - name: reverse
+#          description: Reverse magic
+#          namespace: null
+#      inventory:
+#        - name: docker
+#          description: Inventory plugin for docker containers
+#          namespace: null
+#    objects:
+#      role:
+#        - name: install_reqs
+#          description: Install all requirements of this collection
+#          namespace: null
+#      playbook:
+#        - name: wipe_personal_data
+#          description: Wipes all personal data from the database
+#          namespace: null

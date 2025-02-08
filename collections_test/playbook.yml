@@ -1,9 +1,14 @@
 ---
+# TODO(collection): enable when modules/plugins are added.
 - name: Collection testing sketelon example
   hosts: localhost
   tasks:
-    - name: Test collection hello motd role.
-      ansible.builtin.import_role:
-        name: r_pufky.srv.hello_motd
-      vars:
-        hello_motd_friend_name: "Angry Potato"
+#     - name: Test collection hello motd role.
+#       ansible.builtin.import_role:
+#         name: r_pufky.srv.hello_motd
+#       vars:
+#         hello_motd_friend_name: "Angry Potato"
+    - name: 'NOOP'
+      ansible.builtin.assert:
+        that:
+          - 1 == 1
