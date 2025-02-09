@@ -3,7 +3,7 @@
 Prerequisite:
 * [definitions](definitions.md)
 
-### Docstring: `comment`
+### Docstring: `Comment`
 Inline comments are **not** a sentence and do not required a period or capital
 to start. Full line comments which are statements do.
 ``` yaml
@@ -100,8 +100,8 @@ See `r_pufky.srv.systemd` defaults for example.
 Reference resources for additional information; may contain references to other
 role-related files as well.
 ``` yaml
-Reference:
-* {REFERENCES}
+# Reference:
+# * {REFERENCES}
 ```
 * `references`: string reference
 * no line-length limit.
@@ -110,6 +110,82 @@ Reference:
 Reference:
 * https://example.com/reference/url/over/80/characters
 ```
+
+### Docstring: `Security`
+Reference specific security mitigations. Must include decision, reference, and
+CVE (or other reference) if it exists. Convey the impact of the vulnerability
+and why it is implemented.
+
+Disabled options should remain (but commented out) for easy re-implementation
+by user..
+``` yaml
+# Security: {CVE}
+#   CVE: {LINK}
+#   * {LINK}
+#   Decision: {DECISION} - {DESCRIPTION}.
+#   Mitigation: {DESCRIPTION}.
+#   {REFERENCE}
+```
+* use same section for all locations that it is implemented (write it once and
+  copy to each location).
+* primary CVE listed in header if available.
+* related CVE listed in CVE.
+* [`description`](definitions.md#description)
+* [`decision`](#docstring-decision)
+* [`reference`](#docstring-reference)
+* no line-length limit.
+* Place search instructions in defaults/main.yml to locate:
+
+``` yaml
+# Find security mitigations by searching for CVE or security headers:
+#
+# grep -ri 'CVE'
+# grep -ri 'Security:'
+```
+
+``` yaml
+# Security: CVE-2023-48795
+#   CVE:
+#   * https://nvd.nist.gov/vuln/detail/cve-2023-48795
+#   * https://nvd.nist.gov/vuln/detail/cve-2023-46445
+#   * https://nvd.nist.gov/vuln/detail/cve-2023-46446
+#   * https://nvd.nist.gov/vuln/detail/cve-2024-41909
+#   Decision: remove chacha20 cipher, *-etm MAC - disables attack for modern
+#       systems, remove when OpenSSH 9.6 released with strict key exchange.
+#   Mitigation:
+#   * remove 'chacha20-poly1305@openssh.com' from client ciphers.
+#   * remove '*-etm@openssh.com' from server macs.
+#   Reference:
+#   * https://terrapin-attack.com/#scanner
+#   * https://www.openssh.com/txt/release-9.6
+#
+# Default:
+#   # - 'chacha20-poly1305@openssh.com'
+#   - 'aes128-ctr'
+#   - 'aes192-ctr'
+#   - 'aes256-ctr'
+#   - 'aes128-gcm@openssh.com'
+#   - 'aes256-gcm@openssh.com'
+ssh_client_ciphers:
+  # - 'chacha20-poly1305@openssh.com'
+  - 'aes128-ctr'
+  - 'aes192-ctr'
+  - 'aes256-ctr'
+  - 'aes128-gcm@openssh.com'
+  - 'aes256-gcm@openssh.com'
+```
+
+### Docstring: `WARNING`
+Only for critical cases which a hard to debug failure will occur. These should
+be limited in use.
+
+``` yaml
+# WARNING
+# > {DESCRIPTION}
+```
+* All warnings are copied to README.md.
+* use `>` qoutes for description block.
+* [`description`](definitions.md#description)
 
 ### Docstring: `Decision`
 Explain an opinionated or complex decision for implementing a specific way. Be

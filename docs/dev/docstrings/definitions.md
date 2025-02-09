@@ -75,5 +75,10 @@ Explicit value including [empty datatypes](#type).
  `^$*{VAL}`         | regex expressions are allowed; use {VAL}
  `N/A`              | not applicable
 
+###### variable translation
+Place under top header; explain variable translation and any gotchas.
+
+>  PascalCase: ssh_server_allow_tcp_forwarding > AllowTcpForwarding
+
 ###### comment
 Additional context/clarification.

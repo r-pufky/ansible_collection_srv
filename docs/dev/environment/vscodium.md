@@ -1,7 +1,7 @@
 # Setup VSCodium (VScode) for Ansible
 Install the [Ansible extension](https://marketplace.visualstudio.com/items?itemName=redhat.ansible)
 
-ansible ➤ settings ➤ user | workspace
+ansible > settings > user | workspace
 * ansible path: `/var/venv/ansible_collection_srv/bin/ansible`
 * always use FQCN: ☑
 * reuse terminal: ☑
