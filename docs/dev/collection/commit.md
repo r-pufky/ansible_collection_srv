@@ -43,14 +43,13 @@ Per [Semantic Versioning v2](https://semver.org/)
   * Point: bug fixes / updates
 * Tag commit with galaxy version per [galaxy.yml](../../../galaxy.yml)
 
-Until collection is migrated publically Major will always be `0` as this
+Until collection is migrated publicly Major will always be `0` as this
 prevent galaxy inclusion (`1.0.0` is the minimum version).
 
-## Push Galaxy Release
+## Build Galaxy Release
 
 ``` bash
 ansible-galaxy collection build
 ansible-galaxy collection publish
 ```
 [Reference](https://docs.ansible.com/ansible/latest/dev_guide/developing_collections_creating.html)
-

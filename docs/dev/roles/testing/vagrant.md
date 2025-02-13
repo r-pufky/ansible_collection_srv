@@ -192,3 +192,34 @@ vagrant box list
 vagrant box destroy {ID}
 ```
 * Additionally check GUI if needed
+
+### Molecule fails with couldn't resolve module/action 'vagrant'.
+Molecule `25.2.0` is a bad release that broke vagrant modules. Temporary
+workaround while fixes are applied:
+
+``` bash
+pip install --force-reinstall -v 'molecule==25.1.0'
+```
+
+``` bash
+molecule create
+> WARNING  Driver vagrant does not provide a schema.
+> INFO     default scenario test matrix: dependency, create, prepare, converge
+> INFO     Performing prerun with role_name_check=0...
+> INFO     Running default > dependency
+> WARNING  Skipping, missing the requirements file.
+> WARNING  Skipping, missing the requirements file.
+> INFO     Running default > create
+> ERROR! couldn't resolve module/action 'vagrant'. This often indicates a misspelling, missing collection, or incorrect module path.
+>
+> The error appears to be in '/home/garar/.local/share/pipx/venvs/molecule-plugins/lib/python3.12/site-packages/molecule_plugins/vagrant/playbooks/create.yml': line 8, column 7, but may
+> be elsewhere in the file depending on the exact syntax problem.
+>
+> The offending line appears to be:
+>
+>   tasks:
+>     - name: Create molecule instance(s) # noqa fqcn[action]
+>       ^ here
+```
+
+https://github.com/ansible-community/molecule-plugins/issues/301

@@ -1,6 +1,26 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  0.0.2:
+    release_date: '2025-02-13'
+    codename: 'deluge'
+    changes:
+      release_summary: 'Added Deluge bittorrent downloader.'
+      major_changes:
+        - 'Deluge service migrated.'
+        - 'Plex, NZBGet no longer remove user to prevent APT broken state.'
+      minor_changes:
+        - 'Documentation updates.'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
   0.0.1:
     release_date: '2025-02-08'
     codename: 'media'

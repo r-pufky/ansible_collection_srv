@@ -76,3 +76,6 @@
 [submodule "roles/whisparr"]
 	path = roles/whisparr
 	url = https://github.com/r-pufky/ansible_whisparr
+[submodule "roles/deluge"]
+	path = roles/deluge
+	url = https://github.com/r-pufky/ansible_deluge

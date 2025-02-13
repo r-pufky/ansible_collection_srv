@@ -1,7 +1,7 @@
 ---
 namespace: 'r_pufky'
 name: 'srv'
-version: '0.0.1'  # noqa galaxy[version-incorrect] 0.0.x until release.
+version: '0.0.2'  # noqa galaxy[version-incorrect] 0.0.x until release.
 readme: 'README.md'
 authors:
   - 'Robert Pufky <rpufky@gmail.com> (https://github.com/r-pufky)'
@@ -38,4 +38,10 @@ build_ignore:
   - '*.tar.gz'  # testing archives.
   - '*.db*'  # SQLite3 testing DB binaries.
   - '*.pfx'  # PFX testing certificates.
+  - '*.cert'  # testing ceritifcates.
+  - '*.key'  # testing keys.
+  - '*.pkey'  # testing keys.
   - 'ansible.env'  # development ansible environment.
+  - '.ansible'  # ansible collection cache for role testing.
+  - '.vscode'  # VSCodium settings.
+  - 'plugins/**'  # temporary until plugins are actually added.

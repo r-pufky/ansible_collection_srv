@@ -10,7 +10,9 @@ Prerequisite:
 
 [Testing](testing.md)
 
-[Committing & Releasing](commit.md)
+[Committing](commit.md)
+
+[Releasing](release.md)
 
 # TODO's
 
