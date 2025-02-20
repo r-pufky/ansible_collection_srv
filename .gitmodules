@@ -79,3 +79,6 @@
 [submodule "roles/deluge"]
 	path = roles/deluge
 	url = https://github.com/r-pufky/ansible_deluge
+[submodule "roles/gpu"]
+	path = roles/gpu
+	url = https://github.com/r-pufky/ansible_gpu

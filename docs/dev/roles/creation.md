@@ -4,6 +4,11 @@ Prerequisite:
 
 All roles are added as [submodules](submodules.md) in the collection repo.
 
+Always create roles explicitly designed for bare-metal installations. Any VM or
+container workarounds must be applied by the consumer of the role, not the role
+itself. Consumed data (e.g. user data directories) manipulation should be
+toggled off by default.
+
 Creation will overwrite contents of the specified location, destroying existing
 git checkouts. Create the role with a temporary name and move created items
 into the git checkout location.

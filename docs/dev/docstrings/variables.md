@@ -187,6 +187,17 @@ be limited in use.
 * use `>` qoutes for description block.
 * [`description`](definitions.md#description)
 
+### Docstring: `NOTE`
+Only for critical cases which a hard to debug failure will occur; these are not
+exposed to the consumer, but the developer of the role.
+
+``` yaml
+# NOTE
+# > {DESCRIPTION}
+```
+* use `>` qoutes for description block.
+* [`description`](definitions.md#description)
+
 ### Docstring: `Decision`
 Explain an opinionated or complex decision for implementing a specific way. Be
 clear and concise as to the decision and the supporting reasoning.

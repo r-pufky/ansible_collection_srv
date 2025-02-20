@@ -1,6 +1,32 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  0.0.3:
+    release_date: '2025-02-25'
+    codename: '2025-02-25'
+    changes:
+      release_summary: 'Media roles verified for LXC containers.'
+      major_changes:
+        - 'APT - fine-grained dist-upgrade control.'
+        - 'Debian - sysctl disable for containers.'
+        - 'Deluge - explicitly render list items for config files.'
+        - 'GitHub - add directory support for migrations.'
+        - '*arr - metadata migrate and ignore toggles.'
+        - 'Network - sysctl disable for containers.'
+        - 'SSH - fix AllowTCPForwarding, ssh_server_ciphers options.'
+      minor_changes:
+        - 'NFS - add complex NFS sharing documentation.'
+        - 'ZFS - add complex NFS sharing documentation.'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
   0.0.2:
     release_date: '2025-02-13'
     codename: 'deluge'

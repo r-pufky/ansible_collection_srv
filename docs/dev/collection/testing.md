@@ -58,6 +58,12 @@ ln -s /var/git/ansible_collection_srv ~/.ansible/collections/ansible_collections
 Overrides the built collection with the currently development head. **Remove**
 link before using production collections so the released version is installed.
 
+#### External Testing
+External playbooks (e.g. production, staging) can be tested against source
+without building the collection. Any changes in the collection **require** the
+changed roles to run `molecule create`; this will update the cached collection
+location and enable those changes to be tested externally.
+
 ### Only Localhost is Available
 Host inventory not detected when running collection tests.
 
