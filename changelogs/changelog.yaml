@@ -1,6 +1,28 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  0.0.4:
+    release_date: '2025-03-01'
+    codename: '2025-03-01'
+    changes:
+      release_summary: 'Add wireguard role.'
+      major_changes:
+        - 'Wireguard (wireguard-initramfs) service migrated.'
+        - 'Github - add _github_changed generated variable.'
+        - 'Network - manage IPv6,IPv6 forwarding.'
+        - 'All roles migrated to role imports instead of collection import.'
+      minor_changes:
+        - 'N/A'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
   0.0.3:
     release_date: '2025-02-25'
     codename: '2025-02-25'

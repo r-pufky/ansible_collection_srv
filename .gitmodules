@@ -82,3 +82,6 @@
 [submodule "roles/gpu"]
 	path = roles/gpu
 	url = https://github.com/r-pufky/ansible_gpu
+[submodule "roles/wireguard"]
+	path = roles/wireguard
+	url = https://github.com/r-pufky/ansible_wireguard
