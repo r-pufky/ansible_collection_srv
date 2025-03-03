@@ -85,3 +85,6 @@
 [submodule "roles/wireguard"]
 	path = roles/wireguard
 	url = https://github.com/r-pufky/ansible_wireguard
+[submodule "roles/dropbear"]
+	path = roles/dropbear
+	url = https://github.com/r-pufky/ansible_dropbear

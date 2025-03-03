@@ -45,3 +45,5 @@ build_ignore:
   - '.ansible'  # ansible collection cache for role testing.
   - '.vscode'  # VSCodium settings.
   - 'plugins/**'  # temporary until plugins are actually added.
+  - 'TODO.md'  # development staging todo messages.
+  - 'COMMIT.md'  # development staging commit messages.
