@@ -20,9 +20,10 @@ ansible-galaxy role init --init-path roles example
 
 Standards for directory layout:
 ```
+├──── .ansible  # transient molecule testing cache (very large); do not commit.
 ├─┬── defaults
 │ └┬─ main
-│  ├─ main.yml  # ansible specific role configuration (users, locations, etc)
+│  ├─ main.yml  # ansible specific role configuration (users, locations, etc).
 │  ├─ *.yml  # service specific configuration; named by service or type
 │  └─ ports.yml  # firewall definitions even if not used.
 ├──── handlers
@@ -58,6 +59,13 @@ galaxy_info:
     - 'os'
 
 dependencies: []
+```
+
+## `0640 {USER}:{USER}` .gitignore
+Ignore new `.ansible` caching directory.
+``` yaml
+.ansible/
+.ansible
 ```
 
 ## `0640 {USER}:{USER}` meta/requirements.yml

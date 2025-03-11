@@ -88,3 +88,9 @@
 [submodule "roles/dropbear"]
 	path = roles/dropbear
 	url = https://github.com/r-pufky/ansible_dropbear
+[submodule "roles/dnsrobocert"]
+	path = roles/dnsrobocert
+	url = https://github.com/r-pufky/ansible_dnsrobocert
+[submodule "roles/vsftpd"]
+	path = roles/vsftpd
+	url = https://github.com/r-pufky/ansible_vsftpd

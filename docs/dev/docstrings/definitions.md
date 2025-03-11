@@ -74,6 +74,7 @@ Explicit value including [empty datatypes](#type).
  `{OMIT}`           | behavior if this variable is undefined
  `^$*{VAL}`         | regex expressions are allowed; use {VAL}
  `N/A`              | not applicable
+ `{OP}`             | logical operator
 
 ###### variable translation
 Place under top header; explain variable translation and any gotchas.

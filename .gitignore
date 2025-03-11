@@ -1,7 +1,10 @@
 # ansible builds
 r_pufky-srv*.tar.gz
 .ansible/
+.ansible
 .vscode/
+COMMIT.md
+TODO.md
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

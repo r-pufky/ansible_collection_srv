@@ -5,7 +5,7 @@ Prerequisite:
 
 ### Docstring: `Comment`
 Inline comments are **not** a sentence and do not required a period or capital
-to start. Full line comments which are statements do.
+to start (but are preferred). Full line comments which are statements do.
 ``` yaml
 # Full line statement comment with period.
 
@@ -13,6 +13,26 @@ line of code  # inline comment
 gather_facts: true  # ansible_virtualization_role
 package import for testing  # ansible.builtin.module (specific reason)
 ```
+
+### Docstring: `Requires`
+Explicit requirements for variable to be used or activated.
+``` yaml
+Requires {VAR}={VALUE}.
+```
+* Immediately following one-line variable description.
+* Simple requirements only; if description is needed use complex Requires
+  (below).
+* lines end in `.`.
+
+``` yaml
+Requires:
+  * {VAR}={VALUE} - {DESCRIPTION}.
+  * {VAR}={VALUE} - {DESCRIPTION}.
+  * {VAR}={VALUE} {OP} {VAR}={VALUE} ... - {DESCRIPTION}
+```
+* [`description`](definitions.md#description) for nuance only.
+* Indent minimum of **2** spaces.
+* Multi-lines end in `.`.
 
 ### Docstring: `Special Case`
 Exceptions to `Values`, `Defaults`, or specific rules to follow for them.
@@ -24,14 +44,16 @@ Special Case:
 ```
 * Indent minimum of **2** spaces.
 * Vertically align `:` separators.
-* Single-lines have **no** `.`.
 * Multi-lines end in `.`.
+* Internal (variable cases) only; external requirements should be placed in
+  [`Requires`](variables.md#docstring-requires).
 
 ``` yaml
 Special Case:
-  ~: user home directory.
-  *: Tokens as specified from TOKENS section (see reference).
-  *: ENVIRONMENT VARIABLES as specified from tokens section (see reference).
+    ~: user home directory.
+    *: Tokens as specified from TOKENS section (see reference).
+    *: ENVIRONMENT VARIABLES as specified from tokens section (see reference).
+  ':': clarify colon usage or cases where colon could be confused.
 ```
 
 ### Docstring: `Values`
@@ -52,6 +74,7 @@ Values:
 Values:
            none: explicitly disable use of an authentication agent.
              '': no default system agent (default).
+            ':': clarify colon usage or cases where colon could be confused.
   SSH_AUTH_SOCK: get socket location from SSH_AUTH_SOCK environment variable.
              $*: strings beginning with $ will be treated as environment
                  variable containing the location of the socket.
@@ -266,6 +289,8 @@ Simple variable with multiple values.
 ``` yaml
 # {DESCRIPTION}.
 #
+# {REQUIRES}.
+#
 # {DETAILED DESCRIPTION}.
 #
 # {DOCSTRING SPECIAL CASE}
@@ -323,6 +348,8 @@ Use standard YAML formatting for nested variable definitions.
 ``` yaml
 # {DESCRIPTION}.
 #
+# {REQUIRES}.
+#
 # {DETAILED DESCRIPTION}.
 #
 # {DOCSTRING SPECIAL CASE}
@@ -367,6 +394,8 @@ Use standard YAML formatting for nested variable definitions.
 
 ``` yaml
 # Manage files within the first directory listed in ssh_client_include.
+#
+# Requires role_other_option=true.
 #
 # role_multi_complex:
 #     list of dict - definitions for local configuration.

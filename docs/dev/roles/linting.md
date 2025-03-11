@@ -124,6 +124,23 @@ Immediately following `task` as primary additional context.
   register: _some_var
 ```
 
+### Loop labels (no_log Clause)
+`no_log` currently does not honor variable interpretation and makes it
+difficult to develop and debug roles using in. Display identifying loop
+information without logging passwords by default.
+
+Use `loop_control` whenever possible to display cleaner loop executions.
+```yaml
+- name: 'looping task with passwords'
+  ansible.builtin.include_tasks: 'some_task.yml'
+  loop: '{{ user_accounts }}'
+  loop_control:
+    label: '{{ item.user }}'
+```
+
+Reference:
+* https://github.com/ansible/ansible/issues/83323#issuecomment-2686201726
+
 ### Comment Headers
 One vertical space to allow for individual task and variable comments.
 
