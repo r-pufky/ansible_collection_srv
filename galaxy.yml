@@ -1,7 +1,7 @@
 ---
 namespace: 'r_pufky'
 name: 'srv'
-version: '0.0.4'  # noqa galaxy[version-incorrect] 0.0.x until release.
+version: '0.0.5'  # noqa galaxy[version-incorrect] 0.0.x until release.
 readme: 'README.md'
 authors:
   - 'Robert Pufky <rpufky@gmail.com> (https://github.com/r-pufky)'
@@ -41,9 +41,14 @@ build_ignore:
   - '*.cert'  # testing certificates.
   - '*.key'  # testing keys.
   - '*.pkey'  # testing keys.
+  - 'keyfile'  # testing keys.
+  - '*.enc'  # testing keys.
   - 'ansible.env'  # development ansible environment.
   - '.ansible'  # ansible collection cache for role testing.
   - '.vscode'  # VSCodium settings.
-  - 'plugins/**'  # temporary until plugins are actually added.
+  - 'plugins/**'  # TODO(collection): until plugins are actually added.
   - 'TODO.md'  # development staging todo messages.
   - 'COMMIT.md'  # development staging commit messages.
+  - 'roles/dnsrobocert'  # TODO(collection): remove when migration completed.
+  - 'roles/gpu'  # TODO(collection): remove when migration completed.
+  - 'roles/fika'  # TODO(collection): remove when migration completed.

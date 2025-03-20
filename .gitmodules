@@ -94,3 +94,9 @@
 [submodule "roles/vsftpd"]
 	path = roles/vsftpd
 	url = https://github.com/r-pufky/ansible_vsftpd
+[submodule "roles/maria"]
+	path = roles/maria
+	url = https://github.com/r-pufky/ansible_maria
+[submodule "roles/postgres"]
+	path = roles/postgres
+	url = https://github.com/r-pufky/ansible_postgres

@@ -50,12 +50,13 @@ A recent change in Ansible now creates a `.ansible` directory in each role that
 is tested, building and copying all role recursively into it. It is an
 unmitigated, unthought out mess of a dependencies which is multi-GB PER role.
 
-This leads to extremely slow and noisey `yamllint` and `ansible-lint` usage.
+This leads to extremely slow and noisy `yamllint` and `ansible-lint` usage.
 
-Delete this directory and link to /tmp for all roles.
+Replace directory with link to RAM based tmpfs in /tmp.
 ``` bash
 cd roles/
 find . -type d -name '.ansible' -exec rm -rf {} \;
 mkdir /tmp/ansible-cache
 for x in $(ls -1); do ln -s /tmp/ansible-cache ${x}/.ansible; done
 ```
+* Remove symlink if spurious molecule testing errors occur.

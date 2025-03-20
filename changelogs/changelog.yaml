@@ -1,6 +1,27 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  0.0.5:
+    release_date: '2025-03-20'
+    codename: '2025-03-20'
+    changes:
+      release_summary: 'Add postgres, maria roles.'
+      major_changes:
+        - 'Maria service migrated.'
+        - 'Postgres service migrated.'
+        - 'All roles loop quoting standardized.'
+      minor_changes:
+        - 'N/A'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
   0.0.4:
     release_date: '2025-03-01'
     codename: '2025-03-01'
