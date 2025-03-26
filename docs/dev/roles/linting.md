@@ -141,6 +141,55 @@ Use `loop_control` whenever possible to display cleaner loop executions.
 Reference:
 * https://github.com/ansible/ansible/issues/83323#issuecomment-2686201726
 
+### Handler (listen clauses)
+Use `listen` clause to run multiple handlers for a given task. `listen` can be
+a list, allowing for specific combinations as needed. Execution order is
+**always** the order as written in handlers.yml, regardless of call order.
+
+Handlers
+```yaml
+- name: 'Handlers | ifreload'
+  listen:
+    - 'Handlers | reload restart networking'
+    - 'Handlers | reload restart FRR'
+  ansible.builtin.command: '/usr/sbin/ifreload -a'
+  become: true
+  changed_when: false
+
+- name: 'Handlers | restart networking'
+  listen: 'Handlers | reload restart networking'
+  when: network_systemctl_network_restart
+  ansible.builtin.service:
+    name: 'networking'
+    state: 'restarted'
+  changed_when: true
+
+- name: 'Handlers | restart FRR'
+  listen: 'Handlers | reload restart frr'
+  ansible.builtin.service:
+    name: 'frr'
+    state: 'restarted'
+```
+
+Usage:
+``` yaml
+- name: 'run restart networking'
+  notify: 'Handlers | reload restart networking'
+  ...
+
+- name: 'run ifreload, restart networking'
+  notify: 'Handlers | reload restart networking'
+  ...
+
+- name: 'run ifreload, restart FRR'
+  notify: 'Handlers | reload restart FRR'
+  ...
+```
+
+Reference:
+* https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_handlers.html
+* https://github.com/ansible/ansible/issues/16378
+
 ### Comment Headers
 One vertical space to allow for individual task and variable comments.
 

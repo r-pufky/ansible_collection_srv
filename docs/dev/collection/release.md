@@ -1,8 +1,11 @@
 # Release Guide
 
+* Update `galaxy.yml`
+* Update `changelogs/changelog.yaml`
+
 Remove cached ansible collections, commit (with signature),
 ``` bash
-find . -type d -name '.ansible' -exec rm -rfv {} \;
+find . -type d -name '.ansible' -exec rm -rfv {} \;  # If needed.
 git commit -S
 git tag {VERSION} {COMMIT}
 git push

@@ -1,6 +1,65 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  0.0.6:
+    release_date: '2025-03-25'
+    codename: '2025-03-25'
+    changes:
+      release_summary: 'Add avenv, paperless_ngx roles.'
+      major_changes:
+        - 'Added roles/avenv.'
+        - 'Added roles/paperless_ngx.'
+        - 'roles/deluge - Use listeners for multiple handler calls.'
+        - 'roles/dropbear - Use listeners for multiple handler calls.'
+        - "roles/github - Fix bug with multiple '-' in source names."
+        - "roles/github - Support multi-call testing."
+        - "roles/github - Add github_binary_static_url option."
+        - 'roles/lidarr - Update github testing to use lists.'
+        - 'roles/network - Use listeners for multiple handler calls.'
+        - >
+          'roles/overseerr - overseerr_main_api_key ->
+          'overseerr_config_api_key.'
+        - 'roles/overseerr - Set correct owner:group for config directory.'
+        - >
+          'roles/overseerr - Set overseerr_build_clear_yarn_cache when builds'
+          'are enabled; otherwise this yarn cache clearing is never disabled'
+          'in testing.'
+        - 'roles/overseerr - Update github testing to use lists.'
+        - 'roles/overseerr - Update documentation and docstrings.'
+        - >
+          'roles/plex - Removed plex_service_transcode_memory. Use'
+          'r_pufky.srv.debian.debian_tmp_ram.'
+        - >
+          'roles/postgres - Use correct default for IPv6 local connections'
+          "postgres_hba_config[].address='::1/128'."
+        - 'roles/radarr - Update github testing to use lists.'
+        - 'roles/readarr - Update github testing to use lists.'
+        - 'roles/sonarr - Update github testing to use lists.'
+        - 'roles/vsftpd - Use force string concatenation for user_config path.'
+        - 'roles/wireguard - Use listeners for multiple handler calls.'
+        - 'roles/wireguard - Update github testing to use lists.'
+      minor_changes:
+        - 'roles/debian - Update docstrings.'
+        - 'roles/maria - Update docstrings.'
+        - 'roles/nzbget - Use correct message when auto APT sources required.'
+        - >
+          'roles/postgres - Move package installation to main as no other'
+          'processing happens.'
+        - 'roles/postgres - Update docstrings.'
+        - 'roles/sqlite - Update docstrings.'
+        - 'roles/systemd - Update docstrings.'
+        - 'roles/users - Standardize loop quoting, docstrings.'
+        - 'roles/vsftpd - Standardize README.md.'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
   0.0.5:
     release_date: '2025-03-20'
     codename: '2025-03-20'

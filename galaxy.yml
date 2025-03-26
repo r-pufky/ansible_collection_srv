@@ -1,7 +1,7 @@
 ---
 namespace: 'r_pufky'
 name: 'srv'
-version: '0.0.5'  # noqa galaxy[version-incorrect] 0.0.x until release.
+version: '0.0.6'  # noqa galaxy[version-incorrect] 0.0.x until release.
 readme: 'README.md'
 authors:
   - 'Robert Pufky <rpufky@gmail.com> (https://github.com/r-pufky)'
@@ -36,6 +36,7 @@ issues: 'https://github.com/r-pufky/ansible_collection_srv/issues'
 # Mutually exclusive with 'manifest'.
 build_ignore:
   - '*.tar.gz'  # testing archives.
+  - '*.tar.xz'  # testing archives.
   - '*.db*'  # SQLite3 testing DB binaries.
   - '*.pfx'  # PFX testing certificates.
   - '*.cert'  # testing certificates.

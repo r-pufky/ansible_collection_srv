@@ -100,3 +100,9 @@
 [submodule "roles/postgres"]
 	path = roles/postgres
 	url = https://github.com/r-pufky/ansible_postgres
+[submodule "roles/paperless_ngx"]
+	path = roles/paperless_ngx
+	url = https://github.com/r-pufky/ansible_paperless_ngx
+[submodule "roles/avenv"]
+	path = roles/avenv
+	url = https://github.com/r-pufky/ansible_avenv
