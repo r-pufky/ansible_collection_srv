@@ -1,6 +1,38 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  0.0.7:
+    release_date: '2025-04-01'
+    codename: '2025-04-01'
+    changes:
+      release_summary: 'Permissions and security releases.'
+      major_changes:
+        - 'roles/maria - Initialize and manage data directories.'
+        - 'roles/maria - Only set tarball permissions if found.'
+        - 'roles/maria - Explicitly state backup requirements.'
+        - 'roles/postgres - Add database owner management.'
+        - 'roles/postgres - Use postgres_user for data directory management.'
+        - >
+          'roles/postgres - Install pre-requisite package without requiring'
+          'postgres APT sources.'
+        - 'roles/paperless_ngx - Add cache management.'
+        - 'roles/paperless_ngx - Enable user config of JBIG2enc, Ghostscript.'
+        - 'roles/vsftpd - Add toggle options to set recursive permissions.'
+      minor_changes:
+        - 'roles/apt - fix spelling error.'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - >
+          'roles/paperless_ngx - Fix CVE-2023-43115 et. al. Address multiple'
+          'CVEs by building and using latest Ghostscript source instead of'
+          'Debian APT package. This resolves 20 CVEs.'
+      bugfixes:
+        - 'N/A'
   0.0.6:
     release_date: '2025-03-25'
     codename: '2025-03-25'
