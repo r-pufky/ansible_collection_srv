@@ -1,6 +1,28 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  0.0.8:
+    release_date: '2025-04-03'
+    codename: '2025-04-03'
+    changes:
+      release_summary: 'Gitea shim until patched.'
+      major_changes:
+        - >
+          'roles/gitea - Add fork of roles-ansible/ansible_role_gitea until'
+          '#201 is integrated and resolved. This role will be removed when'
+          'patched, or hard forked if needed.'
+      minor_changes:
+        - 'N/A'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
   0.0.7:
     release_date: '2025-04-01'
     codename: '2025-04-01'

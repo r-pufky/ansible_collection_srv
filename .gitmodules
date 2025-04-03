@@ -106,3 +106,6 @@
 [submodule "roles/avenv"]
 	path = roles/avenv
 	url = https://github.com/r-pufky/ansible_avenv
+[submodule "roles/gitea"]
+	path = roles/gitea
+	url = https://github.com/r-pufky/ansible_gitea
