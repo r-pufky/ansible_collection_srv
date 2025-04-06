@@ -3,6 +3,7 @@ r_pufky-srv*.tar.gz
 .ansible/
 .ansible
 .vscode/
+molecule/cache
 COMMIT.md
 TODO.md
 

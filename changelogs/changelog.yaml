@@ -1,6 +1,27 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  0.0.9:
+    release_date: '2025-04-05'
+    codename: '2025-04-05'
+    changes:
+      release_summary: 'Remove binary files from submodules.'
+      major_changes:
+        - >
+          'role submodules updated to remove binary LFS dependencies which'
+          'hit github LFS limits.'
+      minor_changes:
+        - 'N/A'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
   0.0.8:
     release_date: '2025-04-03'
     codename: '2025-04-03'
