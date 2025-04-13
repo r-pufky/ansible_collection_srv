@@ -86,9 +86,14 @@ Only list variables in `Exports` if they are both **generated** and
 * [`docstring special case`](variables.md#docstring-special-case)
 * [`docstring default`](variables.md#docstring-default)
 
+**Generated** variables **must** use `__` if exports are defined.
+
 ``` yaml
+# Generates:
+#   __sqlite_internal_var: str - Example internal only var.
+#
 # Exports:
-#   _sqlite_sql_results: dict - return values from command execution.
+#   _sqlite_sql_results: dict - User consumable return values from execution.
 ```
 
 README.md

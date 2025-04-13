@@ -1,9 +1,6 @@
 [submodule "roles/fonts"]
 	path = roles/fonts
 	url = https://github.com/r-pufky/ansible_fonts
-[submodule "roles/github"]
-	path = roles/github
-	url = https://github.com/r-pufky/ansible_github
 [submodule "roles/overseerr"]
 	path = roles/overseerr
 	url = https://github.com/r-pufky/ansible_overseerr
@@ -109,3 +106,12 @@
 [submodule "roles/gitea"]
 	path = roles/gitea
 	url = https://github.com/r-pufky/ansible_gitea
+[submodule "roles/forgejo"]
+	path = roles/forgejo
+	url = https://github.com/r-pufky/ansible_forgejo
+[submodule "roles/codeberg"]
+	path = roles/codeberg
+	url = https://github.com/r-pufky/ansible_codeberg
+[submodule "roles/repo"]
+	path = roles/repo
+	url = https://github.com/r-pufky/ansible_repo

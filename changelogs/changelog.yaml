@@ -1,6 +1,37 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  0.0.10:
+    release_date: '2025-04-13'
+    codename: '2025-04-13'
+    changes:
+      release_summary: 'Migrate to r_pufky.srv.repo.'
+      major_changes:
+        - >
+          'Use generic remote repository download manager which supports'
+          'github and codeberg, checksum and signature validation.'
+        - 'roles/repo - Added.'
+        - 'roles/github - Deleted.'
+        - 'roles/lidarr - Migrate to r_pufky.srv.repo.'
+        - 'roles/overseerr - Migrate to r_pufky.srv.repo.'
+        - 'roles/paperless_ngx - Migrate to r_pufky.srv.repo.'
+        - 'roles/radarr - Migrate to r_pufky.srv.repo.'
+        - 'roles/readarr - Migrate to r_pufky.srv.repo.'
+        - 'roles/sonarr - Migrate to r_pufky.srv.repo.'
+        - 'roles/whisparr - Migrate to r_pufky.srv.repo.'
+        - 'roles/wireguard - Migrate to r_pufky.srv.repo.'
+      minor_changes:
+        - 'roles/firmware - Asserts are quiet by default.'
+      breaking_changes:
+        - 'r_pufky.srv.github -> r_pufky.srv.repo'
+      deprecated_features:
+        - 'r_pufky.srv.github'
+      removed_features:
+        - 'r_pufky.srv.github'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
   0.0.9:
     release_date: '2025-04-05'
     codename: '2025-04-05'
