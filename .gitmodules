@@ -106,12 +106,18 @@
 [submodule "roles/gitea"]
 	path = roles/gitea
 	url = https://github.com/r-pufky/ansible_gitea
-[submodule "roles/forgejo"]
-	path = roles/forgejo
-	url = https://github.com/r-pufky/ansible_forgejo
 [submodule "roles/codeberg"]
 	path = roles/codeberg
 	url = https://github.com/r-pufky/ansible_codeberg
 [submodule "roles/repo"]
 	path = roles/repo
 	url = https://github.com/r-pufky/ansible_repo
+[submodule "roles/tests"]
+	path = roles/tests
+	url = https://github.com/r-pufky/ansible_tests
+[submodule "roles/utils"]
+	path = roles/utils
+	url = https://github.com/r-pufky/ansible_utils
+[submodule "roles/forgejo"]
+	path = roles/forgejo
+	url = https://github.com/r-pufky/ansible_forgejo

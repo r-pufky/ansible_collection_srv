@@ -1,6 +1,36 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  0.0.11:
+    release_date: '2025-05-12'
+    codename: '2025-05-12'
+    changes:
+      release_summary: 'Add Forgejo, utils, tests roles; use common libraries.'
+      major_changes:
+        - 'roles/forgejo - Added.'
+        - 'roles/utils - Added.'
+        - 'roles/tests - Added.'
+        - 'roles/lidarr - Use libraries for common operations.'
+        - 'roles/overseerr - Use libraries for common operations.'
+        - 'roles/paperless_ngx - Use libraries for common operations.'
+        - 'roles/radarr - Use libraries for common operations.'
+        - 'roles/readarr - Use libraries for common operations.'
+        - 'roles/repo - Use libraries for common operations.'
+        - 'roles/sonarr - Use libraries for common operations.'
+        - 'roles/whisparr - Use libraries for common operations.'
+        - 'roles/wireguard - Use libraries for common operations.'
+      minor_changes:
+        - 'N/A'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
   0.0.10:
     release_date: '2025-04-13'
     codename: '2025-04-13'

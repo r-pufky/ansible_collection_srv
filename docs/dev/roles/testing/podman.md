@@ -67,6 +67,8 @@ platforms:
     command: '/lib/systemd/systemd'
     pre_build_image: true
     # privileged: true  # for some operations like sysctl, ulimit
+    published_ports:
+      - '3000:3000/tcp'  # Exposes port to host. Not needed for testing.
 verifier:
   name: 'ansible'
 lint: |

@@ -4,7 +4,31 @@ Prerequisite:
 
 # File Formatting
 **Always** follow `yamllint` and `ansible-lint` linting with **no** global
-execeptions.
+exceptions.
+
+## 80 character width.
+Only extend past 80 characters if long variable names make it impossible.
+
+
+```yaml
+- ansible.builtin.set_fact:
+    JWT_SIGNING_PRIVATE_KEY_FILE:
+      '{{ forgejo_config_server_app_data_path }}/jwt/private.pem',
+    JWT_SIGNING_ALGORITHM: '{{
+        forgejo_config_oauth2_jwt_signing_algorithm | upper
+      }}',
+    SSH_TRUSTED_USER_CA_KEYS_FILENAME: '{{
+        _forgejo_home ~ "/.ssh/ca_trust_chain_root.pem"
+        if forgejo_config_server_ssh_trusted_user_ca_keys_filename | length > 0 else
+        ""
+      }}',
+```
+* Single-line uses **2** space block (prefer).
+* Multi-line vars use hanging opens with **4** space block and **2** closer;
+  lines may go over 80 characters if it cannot be split further using these
+  rules.
+* If statements use hanging opens with **4** space block and **2** closer; one
+  line per operator and may each individually go over 80 character limit.
 
 ## Accepted Disables
 

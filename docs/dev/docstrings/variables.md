@@ -38,12 +38,13 @@ Requires:
 Exceptions to `Values`, `Defaults`, or specific rules to follow for them.
 ``` yaml
 Special Case:
-  {VALUE}: {DESCRIPTION}.
-  {VALUE}: {DESCRIPTION EXTENDED}.
-           {DESCRIPTION EXTENDED}.
+  {VALUE}[:] {DESCRIPTION}.
+  {VALUE}[:] {DESCRIPTION EXTENDED}.
+             {DESCRIPTION EXTENDED}.
 ```
 * Indent minimum of **2** spaces.
 * Vertically align `:` separators.
+* `:` dropped if special case is only a list that applies to everything.
 * Multi-lines end in `.`.
 * Internal (variable cases) only; external requirements should be placed in
   [`Requires`](variables.md#docstring-requires).
@@ -54,6 +55,10 @@ Special Case:
     *: Tokens as specified from TOKENS section (see reference).
     *: ENVIRONMENT VARIABLES as specified from tokens section (see reference).
   ':': clarify colon usage or cases where colon could be confused.
+
+Special Case:
+  * All paths are prepended with some_var.
+  * Wildcards allowed.
 ```
 
 ### Docstring: `Values`

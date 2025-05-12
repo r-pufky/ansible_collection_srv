@@ -75,6 +75,8 @@ Each pattern requires a separate molecule test setup.
   * load generated files in `converge.yml` and inject test variables there.
 * Use `ansible.builtin.assert` to validate test results. Any tests missing this
   are not explicitly validating correctness.
+  https://www.puppeteers.net/blog/ansible-quality-assurance-part-1-ansible-variable-validation-with-assert/
+  srv.tests
 * Use `{ROLE}_testing_enable` in `defaults/testing.yml`:
   * Disable live API usage (which cannot be mocked easily).
   * Enable use of role in other roles without the need for a VM.
@@ -95,6 +97,20 @@ Each pattern requires a separate molecule test setup.
   changes.
 
 [Reference](https://github.com/ansible/molecule/issues/4348)
+
+#### Testing documentation.
+Provide testing documentation in `molecule.yml` explicitly stating the expected
+conditions to test. Use the following format:
+
+``` yaml
+###############################################################################
+# [Molecule Test Name]
+###############################################################################
+# Description of the molecule test / setup.
+#
+# Tests:
+# * Each condition to verify on completion.
+```
 
 #### Default
 `default` is effectively an role integration test with default values; only
