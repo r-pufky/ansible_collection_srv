@@ -1,60 +1,12 @@
-[submodule "roles/fonts"]
-	path = roles/fonts
-	url = https://github.com/r-pufky/ansible_fonts
 [submodule "roles/overseerr"]
 	path = roles/overseerr
 	url = https://github.com/r-pufky/ansible_overseerr
 [submodule "roles/sonarr"]
 	path = roles/sonarr
 	url = https://github.com/r-pufky/ansible_sonarr
-[submodule "roles/users"]
-	path = roles/users
-	url = https://github.com/r-pufky/ansible_users
-[submodule "roles/debian"]
-	path = roles/debian
-	url = https://github.com/r-pufky/ansible_debian
-[submodule "roles/journald"]
-	path = roles/journald
-	url = https://github.com/r-pufky/ansible_journald
-[submodule "roles/logrotate"]
-	path = roles/logrotate
-	url = https://github.com/r-pufky/ansible_logrotate
-[submodule "roles/ssh"]
-	path = roles/ssh
-	url = https://github.com/r-pufky/ansible_ssh
-[submodule "roles/ufw"]
-	path = roles/ufw
-	url = https://github.com/r-pufky/ansible_ufw
-[submodule "roles/init"]
-	path = roles/init
-	url = https://github.com/r-pufky/ansible_init
-[submodule "roles/systemd"]
-	path = roles/systemd
-	url = https://github.com/r-pufky/ansible_systemd
 [submodule "roles/sqlite"]
 	path = roles/sqlite
 	url = https://github.com/r-pufky/ansible_sqlite
-[submodule "roles/secure_boot"]
-	path = roles/secure_boot
-	url = https://github.com/r-pufky/ansible_secure_boot
-[submodule "roles/firmware"]
-	path = roles/firmware
-	url = https://github.com/r-pufky/ansible_firmware
-[submodule "roles/apt"]
-	path = roles/apt
-	url = https://github.com/r-pufky/ansible_apt
-[submodule "roles/network"]
-	path = roles/network
-	url = https://github.com/r-pufky/ansible_network
-[submodule "roles/cron"]
-	path = roles/cron
-	url = https://github.com/r-pufky/ansible_cron
-[submodule "roles/zfs"]
-	path = roles/zfs
-	url = https://github.com/r-pufky/ansible_zfs
-[submodule "roles/nfs"]
-	path = roles/nfs
-	url = https://github.com/r-pufky/ansible_nfs
 [submodule "roles/plex"]
 	path = roles/plex
 	url = https://github.com/r-pufky/ansible_plex
@@ -79,12 +31,6 @@
 [submodule "roles/gpu"]
 	path = roles/gpu
 	url = https://github.com/r-pufky/ansible_gpu
-[submodule "roles/wireguard"]
-	path = roles/wireguard
-	url = https://github.com/r-pufky/ansible_wireguard
-[submodule "roles/dropbear"]
-	path = roles/dropbear
-	url = https://github.com/r-pufky/ansible_dropbear
 [submodule "roles/dnsrobocert"]
 	path = roles/dnsrobocert
 	url = https://github.com/r-pufky/ansible_dnsrobocert
@@ -100,24 +46,12 @@
 [submodule "roles/paperless_ngx"]
 	path = roles/paperless_ngx
 	url = https://github.com/r-pufky/ansible_paperless_ngx
-[submodule "roles/avenv"]
-	path = roles/avenv
-	url = https://github.com/r-pufky/ansible_avenv
-[submodule "roles/gitea"]
-	path = roles/gitea
-	url = https://github.com/r-pufky/ansible_gitea
 [submodule "roles/codeberg"]
 	path = roles/codeberg
 	url = https://github.com/r-pufky/ansible_codeberg
-[submodule "roles/repo"]
-	path = roles/repo
-	url = https://github.com/r-pufky/ansible_repo
-[submodule "roles/tests"]
-	path = roles/tests
-	url = https://github.com/r-pufky/ansible_tests
-[submodule "roles/utils"]
-	path = roles/utils
-	url = https://github.com/r-pufky/ansible_utils
 [submodule "roles/forgejo"]
 	path = roles/forgejo
 	url = https://github.com/r-pufky/ansible_forgejo
+[submodule "docs"]
+	path = docs
+	url = https://github.com/r-pufky/ansible_collection_docs

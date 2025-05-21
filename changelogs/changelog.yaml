@@ -1,6 +1,79 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  12.0.0:
+    release_date: '2025-05-20'
+    codename: '2025-05-20'
+    changes:
+      release_summary: 'Migrate low-level roles to separate collection.'
+      major_changes:
+        - 'r_pufky.lib - tests, utils.'
+        - >
+          r_pufky.deb - apt, avenv, cron, dropbear, firmware, fonts, init,
+          journald, logrotate, network, nfs, os, repo, secure_boot, ssh,
+          systemd, ufw, users, wireguard, zfs.
+        - 'roles/gitea - Patch committed in main repository.'
+        - 'docs - move to ansible_collection_docs submodule.'
+      minor_changes:
+        - 'N/A'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
+    objects:
+      role:
+        - name: 'deluge'
+          description: 'Deluge bittorrent client.'
+          namespace: null
+        - name: 'forgejo'
+          description: 'Forgejo installation from public release tarball.'
+          namespace: null
+        - name: 'lidarr'
+          description: 'Lidarr installation from public release tarball.'
+          namespace: null
+        - name: 'maria'
+          description: 'Manage Maria databases.'
+          namespace: null
+        - name: 'nzbget'
+          description: 'NZBGet (nzbget.com) using maintained Debian release.'
+          namespace: null
+        - name: 'overseerr'
+          description: 'Overseerr install from source on Debian.'
+          namespace: null
+        - name: 'paperless_ngx'
+          description:
+            'Paperless-NGX installation from public release tarball.'
+          namespace: null
+        - name: 'plex'
+          description: 'Plex Media Server supporting PlexPass entitlements.'
+          namespace: null
+        - name: 'postgres'
+          description: 'Manage Postgres databases.'
+          namespace: null
+        - name: 'radarr'
+          description: 'Radarr installation from public release tarball.'
+          namespace: null
+        - name: 'readarr'
+          description: 'Readarr installation from public release tarball.'
+          namespace: null
+        - name: 'sonarr'
+          description: 'Sonarr installation from public release tarball.'
+          namespace: null
+        - name: 'sqlite'
+          description: 'Execute SQLite commands.'
+          namespace: null
+        - name: 'vsftpd'
+          description: 'VSFTPd service configuration.'
+          namespace: null
+        - name: 'whisparr'
+          description: 'Whisparr installation from public release tarball.'
+          namespace: null
   0.0.11:
     release_date: '2025-05-12'
     codename: '2025-05-12'
@@ -35,25 +108,25 @@ releases:
     release_date: '2025-04-13'
     codename: '2025-04-13'
     changes:
-      release_summary: 'Migrate to r_pufky.srv.repo.'
+      release_summary: 'Migrate to r_pufky.deb.repo.'
       major_changes:
         - >
           'Use generic remote repository download manager which supports'
           'github and codeberg, checksum and signature validation.'
         - 'roles/repo - Added.'
         - 'roles/github - Deleted.'
-        - 'roles/lidarr - Migrate to r_pufky.srv.repo.'
-        - 'roles/overseerr - Migrate to r_pufky.srv.repo.'
-        - 'roles/paperless_ngx - Migrate to r_pufky.srv.repo.'
-        - 'roles/radarr - Migrate to r_pufky.srv.repo.'
-        - 'roles/readarr - Migrate to r_pufky.srv.repo.'
-        - 'roles/sonarr - Migrate to r_pufky.srv.repo.'
-        - 'roles/whisparr - Migrate to r_pufky.srv.repo.'
-        - 'roles/wireguard - Migrate to r_pufky.srv.repo.'
+        - 'roles/lidarr - Migrate to r_pufky.deb.repo.'
+        - 'roles/overseerr - Migrate to r_pufky.deb.repo.'
+        - 'roles/paperless_ngx - Migrate to r_pufky.deb.repo.'
+        - 'roles/radarr - Migrate to r_pufky.deb.repo.'
+        - 'roles/readarr - Migrate to r_pufky.deb.repo.'
+        - 'roles/sonarr - Migrate to r_pufky.deb.repo.'
+        - 'roles/whisparr - Migrate to r_pufky.deb.repo.'
+        - 'roles/wireguard - Migrate to r_pufky.deb.repo.'
       minor_changes:
         - 'roles/firmware - Asserts are quiet by default.'
       breaking_changes:
-        - 'r_pufky.srv.github -> r_pufky.srv.repo'
+        - 'r_pufky.srv.github -> r_pufky.deb.repo'
       deprecated_features:
         - 'r_pufky.srv.github'
       removed_features:
@@ -164,7 +237,7 @@ releases:
         - 'roles/overseerr - Update documentation and docstrings.'
         - >
           'roles/plex - Removed plex_service_transcode_memory. Use'
-          'r_pufky.srv.debian.debian_tmp_ram.'
+          'r_pufky.deb.os.debian_tmp_ram.'
         - >
           'roles/postgres - Use correct default for IPv6 local connections'
           "postgres_hba_config[].address='::1/128'."
