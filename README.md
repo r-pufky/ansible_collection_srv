@@ -16,3 +16,5 @@ See [Documentation](https://github.com/r-pufky/ansible_collection_docs) for
 development setup, requirements, and submission practices.
 
 See Individual role documentation for usage. All roles are heavily tested.
+
+[Install from Galaxy](https://galaxy.ansible.com/ui/repo/published/r_pufky/srv).

@@ -1,6 +1,92 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  12.1.0:
+    release_date: '2025-07-09'
+    codename: '2025-07-09'
+    changes:
+      release_summary: 'Implement media data annotations.'
+      major_changes:
+        - >
+          'Data annotations enable easy future updates, variable deprecations,'
+          'type inference when rendering, and addresses many of the missing'
+          'features in argument_spec. Standardized variable usage now that'
+          'data annotations are implemented. These variable names are'
+          'shortened and allow easy filtering for future changes for both'
+          'configuration and service changes. This is a one time BREAKING'
+          'change requiring updates to affected role variables.'
+        - 'roles/deluge - Implement data annotations.'
+        - 'roles/lidarr - Implement data annotations.'
+        - 'roles/nzbget - Implement data annotations.'
+        - 'roles/paperless_ngx - Implement data annotations.'
+        - 'roles/plex - Implement data annotations.'
+        - 'roles/radarr - Implement data annotations.'
+        - 'roles/readarr - Implement data annotations.'
+        - 'roles/sonarr - Implement data annotations.'
+        - 'roles/vsftpd - Implement data annotations.'
+        - 'roles/whisparr - Implement data annotations.'
+      minor_changes:
+        - 'N/A'
+      breaking_changes:
+        - >
+          'Transformed role variables to enforce data annotation awareness.'
+          'Raises assertion error if old variable use is detected.'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
+    objects:
+      role:
+        - name: 'deluge'
+          description: 'Deluge bittorrent client.'
+          namespace: null
+        - name: 'forgejo'
+          description: 'Forgejo installation from public release tarball.'
+          namespace: null
+        - name: 'lidarr'
+          description: 'Lidarr installation from public release tarball.'
+          namespace: null
+        - name: 'maria'
+          description: 'Manage Maria databases.'
+          namespace: null
+        - name: 'nzbget'
+          description: 'NZBGet (nzbget.com) using maintained Debian release.'
+          namespace: null
+        - name: 'overseerr'
+          description: 'Overseerr install from source on Debian.'
+          namespace: null
+        - name: 'paperless_ngx'
+          description:
+            'Paperless-NGX installation from public release tarball.'
+          namespace: null
+        - name: 'plex'
+          description: 'Plex Media Server supporting PlexPass entitlements.'
+          namespace: null
+        - name: 'postgres'
+          description: 'Manage Postgres databases.'
+          namespace: null
+        - name: 'radarr'
+          description: 'Radarr installation from public release tarball.'
+          namespace: null
+        - name: 'readarr'
+          description: 'Readarr installation from public release tarball.'
+          namespace: null
+        - name: 'sonarr'
+          description: 'Sonarr installation from public release tarball.'
+          namespace: null
+        - name: 'sqlite'
+          description: 'Execute SQLite commands.'
+          namespace: null
+        - name: 'vsftpd'
+          description: 'VSFTPd service configuration.'
+          namespace: null
+        - name: 'whisparr'
+          description: 'Whisparr installation from public release tarball.'
+          namespace: null
   12.0.0:
     release_date: '2025-05-20'
     codename: '2025-05-20'
