@@ -1,11 +1,81 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  12.1.2:
+    release_date: '2025-07-24'
+    codename: '2025-07-24'
+    changes:
+      release_summary: 'Update Forgejo, Maria, Paperless, Postgres roles.'
+      major_changes:
+        - 'roles/forgejo - Initial release (use release/tagged version).'
+        - 'roles/maria - Initial release (use release/tagged version).'
+        - 'roles/postgres - Initial release (use release/tagged version).'
+      minor_changes:
+        - 'roles/nzbget - Remove config from monitored user data locations.'
+        - 'roles/paperless_ngx - Add classification troubleshooting.'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
+    objects:
+      role:
+        - name: 'deluge'
+          description: 'Deluge bittorrent client.'
+          namespace: null
+        - name: 'forgejo'
+          description: 'Forgejo installation from public release tarball.'
+          namespace: null
+        - name: 'lidarr'
+          description: 'Lidarr installation from public release tarball.'
+          namespace: null
+        - name: 'maria'
+          description: 'Manage Maria databases.'
+          namespace: null
+        - name: 'nzbget'
+          description: 'NZBGet (nzbget.com) using maintained Debian release.'
+          namespace: null
+        - name: 'overseerr'
+          description: 'Overseerr install from source on Debian.'
+          namespace: null
+        - name: 'paperless_ngx'
+          description:
+            'Paperless-NGX installation from public release tarball.'
+          namespace: null
+        - name: 'plex'
+          description: 'Plex Media Server supporting PlexPass entitlements.'
+          namespace: null
+        - name: 'postgres'
+          description: 'Manage Postgres databases.'
+          namespace: null
+        - name: 'radarr'
+          description: 'Radarr installation from public release tarball.'
+          namespace: null
+        - name: 'readarr'
+          description: 'Readarr installation from public release tarball.'
+          namespace: null
+        - name: 'sonarr'
+          description: 'Sonarr installation from public release tarball.'
+          namespace: null
+        - name: 'sqlite'
+          description: 'Execute SQLite commands.'
+          namespace: null
+        - name: 'vsftpd'
+          description: 'VSFTPd service configuration.'
+          namespace: null
+        - name: 'whisparr'
+          description: 'Whisparr installation from public release tarball.'
+          namespace: null
   12.1.1:
     release_date: '2025-07-13'
     codename: '2025-07-13'
     changes:
-      release_summary: '.'
+      release_summary: 'Update paperless_ngx release role.'
       major_changes:
         - 'roles/paperless_ngx - Update to 2.17.x, add hidden NLTK dependency.'
       minor_changes:
