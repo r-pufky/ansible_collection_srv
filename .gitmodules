@@ -55,3 +55,6 @@
 [submodule "docs"]
 	path = docs
 	url = https://github.com/r-pufky/ansible_collection_docs
+[submodule "roles/jellyseerr"]
+	path = roles/jellyseerr
+	url = https://github.com/r-pufky/ansible_jellyseerr
