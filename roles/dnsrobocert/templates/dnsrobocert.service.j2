@@ -1,0 +1,18 @@
+[Unit]
+Description=dnsrobocert
+Wants=wait_for_acme_mount.target
+After=network.target wait_for_acme_mount.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User={{ acme_user }}
+Group={{ acme_group }}
+WorkingDirectory={{ acme_base }}
+ExecStart=/bin/bash --login -c 'source {{ acme_base }}/.acme.env; cd {{ acme_base }} && dnsrobocert -c "{{ acme_base }}/dnsrobocert/config.yml" -d "{{ acme_cert }}"'
+Restart=always
+RestartSec=120
+SyslogIdentifier=dnsrobocert
+
+[Install]
+WantedBy=multi-user.target

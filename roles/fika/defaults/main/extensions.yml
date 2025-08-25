@@ -1,0 +1,25 @@
+---
+###############################################################################
+# Extensions Section (config.xml)
+###############################################################################
+# Manually specify additional preferences that are not explicitly defined in
+# this config. Use to add additional options from future Radarr updates that
+# are not currently in the role. If you are using this section, please submit a
+# bug with the specific key that needs to be added to the config.
+#
+# Extensions have precedence over defaults; any setting that is also defined in
+# defaults will be overwritten with the value defined here.
+#
+# Deprecated options may be specified here.
+#
+# https://github.com/r-pufky/ansible_radarr/issues
+#
+# radarr_config_extensions:
+#     dict - additional XML settings.
+#   {KEY}: str - XML value.
+#
+# radarr_config_extensions:
+#   SomeNewConfigXmlSetting: '1'
+#
+# Default: {}.
+radarr_config_extensions: {}

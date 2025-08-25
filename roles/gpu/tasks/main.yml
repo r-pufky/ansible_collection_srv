@@ -1,0 +1,5 @@
+---
+- name: 'Prep'
+  ansible.builtin.import_tasks: 'prep.yml'
+- name: 'Install'
+  ansible.builtin.import_tasks: 'install.yml'

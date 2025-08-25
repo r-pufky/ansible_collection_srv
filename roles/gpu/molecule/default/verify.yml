@@ -1,0 +1,14 @@
+---
+- name: 'Default | verify'
+  hosts: 'all'
+  gather_facts: false
+  become: true
+  tasks:
+    - name: 'Default | verify | gather installed packages'
+      ansible.builtin.package_facts:
+
+    - name: 'Default | verify | assert firmware package installed'
+      ansible.builtin.assert:
+        that:
+          - '"fwupd" in ansible_facts.packages'
+        fail_msg: 'fwupd should be installed.'

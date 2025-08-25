@@ -1,0 +1,42 @@
+---
+###############################################################################
+# dnsrobocert config.yml (acme section)
+###############################################################################
+# https://dnsrobocert.readthedocs.io/en/latest/user_guide.html#configuring-acme-section
+acme:
+  api_version: {{ acme_config_acme.api_version }}
+  email_account: '{{ acme_config_acme.email_account }}'
+  staging: {{ acme_config_acme.staging }}
+  certs_permissions:
+    user: '{{ acme_config_acme.certs_permissions.user }}'
+    group: '{{ acme_config_acme.certs_permissions.group }}'
+    dirs_mode: '{{ acme_config_acme.certs_permissions.dirs_mode }}'
+    files_mode: '{{ acme_config_acme.certs_permissions.files_mode }}'
+
+###############################################################################
+# dnsrobocert config.yml (profiles section)
+###############################################################################
+# https://dnsrobocert.readthedocs.io/en/latest/user_guide.html#configuring-profiles-section
+profiles:
+{% for profile in acme_config_profiles %}
+- name: '{{ profile.name }}'
+  provider: '{{ profile.provider }}'
+  sleep_time: {{ profile.sleep_time }}
+  provider_options:
+    auth_service_account_info: '{{ profile.provider_options.auth_service_account_info }}'
+{% endfor %}
+
+###############################################################################
+# dnsrobocert config.yml (certificates section)
+###############################################################################
+# https://dnsrobocert.readthedocs.io/en/latest/user_guide.html#configuring-certificates-section
+certificates:
+{% for cert in acme_config_certificates %}
+- domains:
+{% for domain in cert.domains %}
+  - '{{ domain }}'
+{% endfor %}
+  name: '{{ cert.name }}'
+  profile: '{{ cert.profile }}'
+  deploy_hook: ''
+{% endfor %}

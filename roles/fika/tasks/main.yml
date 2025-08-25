@@ -1,0 +1,7 @@
+---
+- name: 'Main | prep'
+  ansible.builtin.include_tasks: 'prep.yml'
+- name: 'Main | install'
+  ansible.builtin.include_tasks: 'install.yml'
+- name: 'Main | config'
+  ansible.builtin.include_tasks: 'config.yml'

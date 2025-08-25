@@ -1,0 +1,42 @@
+---
+###############################################################################
+# FIKA Service Configuration
+###############################################################################
+
+
+fika_service_spt_version: '3.9.8'
+fika_service_server_version: '2.2.8'
+fika_service_node_version: '20.11.1'
+fika_service_arch: 'x64'
+fika_service_platform: 'linux'
+
+# fika_service_version: '0.9.8995.14684'
+# fika_service_spt_version: '3.9.8-30626-a0c79ac'
+# fika_service_eft_downgrade_version: '0.14.9.30626'
+# fika_service_eft_released_version: '0.14.9.6.31020'
+
+
+###############################################################################
+# FIKA User
+###############################################################################
+
+# User that FIKA will run under.
+#
+# Enable fika_create_user if this account is not externally managed.
+#
+# Default: 'eft'.
+fika_user: 'eft'
+
+# Group that FIKA will run under.
+#
+# Enable fika_create_user if this group is not externally managed.
+#
+# Default: 'eft'.
+fika_group: 'eft'
+
+# Create fika_user, fika_group if not detected?
+#
+# Applied via r_pufky.deb.users, see vars/main.yml for default user attributes.
+#
+# Default: True.
+fika_create_user: true

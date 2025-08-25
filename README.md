@@ -7,7 +7,8 @@ container, OS, and service management.
 
 Major release versions track Debian release versions:
 
-* **12.x.x**: 12 Bookworm.
+* **[13.x.x](https://github.com/r-pufky/ansible_collection_srv)**: 13 Trixie.
+* **[12.x.x](https://github.com/r-pufky/ansible_collection_srv/tree/12.x)**: 12 Bookworm.
 
 Many roles are still being ported to galaxy-ng and will be added to this
 collection as minor patch releases until complete.

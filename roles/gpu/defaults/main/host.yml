@@ -1,0 +1,20 @@
+---
+###############################################################################
+# GPU Passthrough Host Configuration
+###############################################################################
+
+# Enable management of IOMMU kernel options ({intel,amd}_iommu)? Default: True.
+gpu_host_iommu_enable: true
+
+# Enable IOMMU passthrough kernel options(iommu=pt)? Default: True.
+gpu_host_iommu_pass_through: true
+
+# Kernel modules to load on boot.
+gpu_host_kernel_modules:
+  - 'vfio'
+  - 'vfio_iommu_type1'
+  - 'vfio_pci'
+
+# Additional kernel options for GPU passthrough.
+gpu_host_kernel_options:
+  - 'i915.enable_gvt=1'

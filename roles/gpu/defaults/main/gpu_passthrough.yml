@@ -1,0 +1,27 @@
+---
+###############################################################################
+# GPU Passthrough Configuration
+###############################################################################
+# Configure GPU passthrough for Host and Guest.
+#
+# TODO(role): This was originally in the 'debian' role but likely should be in
+#     it's own role specifically for GPU passthrough. Leave here until it is
+#     decided, but disable.
+#
+# Reference:
+# * https://wiki.debian.org/NvidiaGraphicsDrivers
+
+
+# GPU driver version to use.
+#
+# Hosts and Guests should use the same driver version.
+#
+# Partial versions may be used (automatically globbed at the end). Recommend
+# specifying the major version and using the built in globbing for minor
+# version updates.
+#
+# If the nvidia-smi check fails when executing the role, the version specified
+# is no longer available upstream, use a newer version.
+#
+# Default: '470'.
+debian_gpu_driver: '470'

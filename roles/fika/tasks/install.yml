@@ -1,0 +1,94 @@
+---
+# yamllint disable rule:line-length
+###############################################################################
+# FIKA Install
+###############################################################################
+# FIKA is installed from source.
+#
+# Clone NVM and install the specified version locally for the user account.
+# Clone SPT and install the specified version locally; transpose encoding for
+# Linux, then build server. Clone and build FIKA server mod and install. Set
+# configuration and service scripts.
+#
+# Use ansible.builtin.git as these are checkouts and not releases.
+#
+# Args:
+#   _fika_nvm_dir: str - absolute path to nvm repo.
+#   _fika_spt_dir: str - absolute path to spt repo.
+#   _fika_eft_dir: str - absolute path to eft install.
+#
+# Reference:
+# * https://gist.github.com/OnniSaarni/a3f840cef63335212ae085a3c6c10d5c
+# * https://github.com/nvm-sh/nvm/
+
+- name: 'Install | packages'
+  ansible.builtin.include_role:
+    name: 'r_pufky.deb.apt'
+  vars:
+    apt_packages:
+      - '{{ fika_role_packages }}'
+    apt_package_update_cache: true
+
+- name: 'Install | git syncs in progress (may take a while)'
+  ansible.builtin.debug:
+    msg: |
+      GIT repositories contain large LFS files. This will take a few minutes.'
+
+- name: 'Install | NVM | clone'
+  ansible.builtin.git:
+    repo: 'https://github.com/nvm-sh/nvm'
+    dest: '{{ _fika_nvm_dir }}'
+    single_branch: true
+    update: true
+    version: 'HEAD'  # noqa latest (version applied via script).
+
+# No exit code to signify change other than plowed failure exit codes.
+- name: 'Install | NVM | {{ fika_service_node_version }}'
+  ansible.builtin.command: '. {{ _fika_nvm_dir }}/nvm.sh && source ~/.bashrc && nvm install {{ fika_service_node_version }}'
+  become: true
+  become_user: '{{ fika_user }}'
+  args:
+    chdir: '{{ fika_role_config_dir }}'
+  register: _fika_nvm
+  changed_when: false
+
+# TODO(role): potential checkout permissions issue, execute as fika?
+- name: 'Install | SPT | clone'
+  ansible.builtin.git:
+    repo: 'https://dev.sp-tarkov.com/SPT/Server'
+    dest: '{{ _fika_spt_dir }}'
+    depth: 1
+    single_branch: true
+    update: true
+    version: '{{ fika_service_spt_version }}'
+
+- name: 'Install | SPT | pull LFS files if needed'
+  ansible.builtin.command: 'git checkout HEAD^ && git lfs fetch --all && git lfs pull'  # noqa command-instead-of-module LFS is not support in module
+  become: true
+  become_user: '{{ fika_user }}'
+  args:
+    chdir: '{{ _fika_spt_dir }}'
+  changed_when: false
+
+- name: 'Install | SPT | remove AKI encoding'
+  ansible.builtin.lineinfile:
+    path: '{{ _fika_spt_dir }}/project/src/Program.ts'
+    regexp: '^.*setEncoding.*$'
+    state: 'absent'
+
+- name: 'Install | SPT | build'
+  ansible.builtin.command: 'npm install && npm run build:release -- --arch={{ fika_service_arch }} --platform={{ fika_service_platform }} && mv {{ _fika_spt_dir }}/build/* {{ _fika_eft_dir }}'
+  become: true
+  become_user: '{{ fika_user }}'
+  args:
+    chdir: '{{ _fika_spt_dir }}'
+  changed_when: false
+
+- name: 'Install | FIKA | clone'
+  ansible.builtin.git:
+    repo: 'https://github.com/project-fika/Fika-Server'
+    dest: '{{ _fika_eft_dir }}/'
+    depth: 1
+    single_branch: true
+    update: true
+    version: '{{ fika_service_server_version }}'

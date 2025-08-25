@@ -1,0 +1,39 @@
+---
+# yamllint disable rule:line-length
+###############################################################################
+# Nvidia Guest Passthrough Driver Configuration
+###############################################################################
+# AMD GPU passthru: https://forum.proxmox.com/threads/amd-gpu-passthrough.139484/
+#
+# Reference:
+# * https://passbe.com/2020/02/19/gpu-nvidia-passthrough-on-proxmox-lxc-container/
+#
+#
+# - name: 'GPU passthrough | nvidia guest | get nvidia driver version'
+#   ansible.builtin.set_fact:
+#     _nvidia_driver: '{{ hostvars[hostvars[inventory_hostname].pve_lxc.node].pve_nvidia_driver }}'
+#
+# - name: 'GPU passthrough | nvidia guest | download nvidia driver binary installer for {{ debian_gpu_driver }}'
+#   ansible.builtin.get_url:
+#     url:   'http://us.download.nvidia.com/XFree86/Linux-x86_64/{{ debian_gpu_driver }}/NVIDIA-Linux-x86_64-{{ debian_gpu_driver }}.run'
+#     dest:  '/root/NVIDIA-Linux-x86_64-{{ debian_gpu_driver }}.run'
+#     owner: 'root'
+#     group: 'root'
+#     mode:  0700
+#   register: _pve_gpu_lxc_binary
+#
+# #  https://www.nvidia.in/Download/driverResults.aspx/220733/en-in
+# #  https://www.nvidia.in/content/DriverDownloads/confirmation.php?url=/XFree86/Linux-x86_64/550.54.14/NVIDIA-Linux-x86_64-550.54.14.run&lang=in&type=geforcem
+# #  https://in.download.nvidia.com/XFree86/Linux-x86_64/550.54.14/NVIDIA-Linux-x86_64-550.54.14.run
+#
+# - name: 'passthrough | install nvidia driver on instance'  # noqa no-handler conditional
+#   when: _pve_gpu_lxc_binary.changed
+#   ansible.builtin.command: '/root/NVIDIA-Linux-x86_64-{{ debian_gpu_driver }}.run --no-kernel-module --silent'
+#   register: _pve_gpu_lxc_driver
+#   failed_when: _pve_gpu_lxc_driver.rc != 0
+#
+# - name: 'passthrough | verify nvidia drivers are loaded'
+#   ansible.builtin.command: 'nvidia-smi'
+#   register: _pve_gpu_lxc_validate
+#   changed_when: false
+#   failed_when: _pve_gpu_lxc_validate.rc != 0

@@ -1,0 +1,61 @@
+---
+# yamllint disable rule:line-length
+###############################################################################
+# Radarr Role Options
+###############################################################################
+
+# Last time FIKA options were validated against a default configuration.
+fika_role_validate_date: '2025-03-05'
+fika_role_validate_release: 'bookworm'
+
+fika_role_config_dir: '/opt/eft'
+
+###############################################################################
+# APT Packages
+###############################################################################
+
+fika_role_packages:
+  - 'git'
+  - 'git-lfs'
+
+###############################################################################
+# Radarr GitHub Options
+###############################################################################
+# Reference:
+# * https://github.com/Radarr/Radarr/releases/latest
+
+radarr_role_github_owner: 'Radarr'
+radarr_role_github_repo: 'Radarr'
+radarr_role_github_repo_archive_type: 'tar.gz'
+radarr_role_repo_extract_dir: '/opt/radarr'
+radarr_role_repo_extract_symlink: '/opt/radarr/radarr'
+radarr_role_repo_release_specifier: 'v'
+radarr_role_github_binary_url: '{VERSION}/Radarr.master.{BARE_VERSION}.linux-core-x64.tar.gz'
+radarr_role_repo_extract_migrate_files:
+  - 'radarr.db'
+  - 'radarr.db-shm'  # Radarr never closes DB's correctly.
+  - 'radarr.db-wal'
+  - 'logs.db'
+  - 'logs.db-shm'
+  - 'logs.db-wal'
+
+###############################################################################
+# Default Radarr User/Group
+###############################################################################
+
+fika_role_group:
+  name: 'eft'
+  gid: 51100
+
+fika_role_user:
+  name: 'eft'
+  group: 'eft'
+  uid: 51100
+  shell: '/opt/eft'
+  home: '/opt/eft'
+  create_home: true
+  password: '!'
+  password_lock: true
+  update_password: 'always'
+  expires: -1
+  system: true

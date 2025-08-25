@@ -1,0 +1,3 @@
+---
+- ansible.builtin.include_tasks: manage_users.yml
+- ansible.builtin.include_tasks: install.yml

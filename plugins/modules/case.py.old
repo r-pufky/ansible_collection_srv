@@ -1,0 +1,166 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Copyright: (c) 2025, Robert Pufky <rpufky@gmail.com>
+# GNU Affero General Public License v3 (see COPYING or https://www.gnu.org/licenses/agpl-3.0.txt)
+
+from __future__ import (absolute_import, division, print_function)
+
+__metaclass__ = type
+
+ANSIBLE_METADATA = {
+    'metadata_version': '1.1',
+    'status': ['preview'],
+    'supported_by': 'community',
+}
+
+DOCUMENTATION = '''
+---
+module: var_case
+short_description: Convert common variable case styles
+version_added: "2.18.0"
+description:
+  - Convert casing styles for single strings or dictionary keys.
+options:
+    camel_to_snake:
+        description:
+          - Convert a dictionary with CamelCase keys to a dictionary with
+            snake_case keys.
+        required: false
+        type: dict
+        default: {}
+    snake_to_camel:
+        description:
+          - Convert a dictionary with snake_case keys to a dictionary with
+            CamelCase keys.
+        required: false
+        type: dict
+        default: {}
+    prepend:
+        description:
+          - Prepend specified text to the casing operation.
+        required: false
+        type: str
+        default: ''
+    append:
+        description:
+          - Append specified text to the casing operation.
+        required: false
+        type: str
+        default: ''
+author:
+    - Robert Pufky (@r-pufky)
+'''
+
+EXAMPLES = '''
+- name: 'Convert CamelCase dict to snake_case.'
+  r_pufky.srv.plex.case:
+    camel_to_snake: '{{ camel_case_dict }}'
+  register: results
+# camel_case_dict:
+#   KeysFromXmlFile: 'some text'
+#
+# results.dict:
+#   keys_from_xml_file: 'some text'
+
+- name: 'Convert snake dict to CamelCase.'
+  r_pufky.srv.plex.case:
+    snake_to_camel: '{{ camel_case_dict }}'
+  register: results
+# snake_case_dict:
+#   keys_from_xml_file: 'some text'
+#
+# results.dict:
+#   KeysFromXmlFile: 'some text'
+
+- name: 'Prepend/append strings to any operation.'
+  r_pufky.srv.var_case:
+    camel_to_snake: '{{ camel_case_dict }}'
+    prepend: 'role_'
+    append: '_import'
+  register: results
+# camel_case_dict:
+#   KeysFromXmlFile: 'some text'
+#
+# results.dict:
+#   role_keys_from_xml_file_import: 'some text'
+'''
+
+RETURN = '''
+dict:
+  description: Dictionary with keys based on dict casing operation
+  returned: success
+  type: dict
+  sample:
+    DictionaryKey: 'first key'
+    AnotherKey: 2
+
+    dictionary_key: 'first key'
+    another_key: 2
+'''
+
+import random
+from ansible.module_utils.basic import AnsibleModule
+
+def camel_to_snake(name, prepend, append):
+    # For each character if it is upper, add _ and lowercase, strip starting _.
+    return f"{prepend}{''.join(['_'+c.lower() if c.isupper() else c for c in name]).lstrip('_')}{append}"
+
+def snake_to_camel(name, prepend, append):
+    # split on _, title case each word and concatenate.
+    return f"{prepend}{''.join(word.title() for word in name.split('_'))}{append}"
+
+def camel_dict_to_snake_dict(camel_dict, prepend, append):
+    snake_dict = {}
+    for k, v in camel_dict.items():
+        if isinstance(v, dict):
+            v = camel_dict_to_snake_dict(v)
+        snake_dict[camel_to_snake(k, prepend, append)] = v
+    return snake_dict
+
+def snake_dict_to_camel_dict(snake_dict, prepend, append):
+    camel_dict = {}
+    for k, v in snake_dict.items():
+        if isinstance(v, dict):
+            v = snake_dict_to_camel_dict(v)
+        camel_dict[snake_to_camel(k, prepend, append)] = v
+    return camel_dict
+
+def run_module():
+    module_args = dict(
+        camel_to_snake=dict(type='dict', required=False),
+        snake_to_camel=dict(type='dict', required=False),
+        prepend=dict(type='str', default='', required=False),
+        append=dict(type='str', default='', required=False),
+    )
+
+    module = AnsibleModule(
+        argument_spec=module_args,
+        supports_check_mode=True,
+    )
+
+    result = dict(
+        changed=False,
+        dict={},
+    )
+
+    if  module.params['cts_dict'] is not None:
+        result['dict'] = camel_dict_to_snake_dict(module.params['cts_dict'], module.params['prepend'], module.params['append'])
+        result['changed'] = True
+
+    if module.params['stc_dict'] is not None:
+        result['dict'] = snake_dict_to_camel_dict(module.params['stc_dict'], module.params['prepend'], module.params['append'])
+        result['changed'] = True
+
+    if module.check_mode:
+        return result
+
+    module.exit_json(**result)
+
+
+def main():
+    run_module()
+
+
+if __name__ == '__main__':
+    main()

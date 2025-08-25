@@ -1,0 +1,62 @@
+---
+###############################################################################
+# Install GPU Packages
+###############################################################################
+# Attempt to install packages. If failed, install Debian repository components
+# and re-run install if enabled.
+
+- name: 'Install'
+  block:
+    - name: 'Install | packages'
+      ansible.builtin.include_role:
+        name: 'r_pufky.deb.apt'
+      vars:
+        apt_packages:
+          - '{{ gpu_role_packages }}'
+          - '{{ gpu_packages }}'
+        apt_packages_absent:
+          - '{{ gpu_packages_absent }}'
+        apt_sources: '{{ gpu_apt_sources }}'
+        apt_package_update_cache: true
+  rescue:
+    - name: 'Install | APT SOURCE REQUIRED'
+      when: not gpu_packages_auto_add_apt_sources_enable
+      ansible.builtin.fail:
+        msg: |
+          Required packages could not be installed.
+
+          GPU requires APT Debian components:
+          * contrib
+          * non-free
+          * non-free-firmware
+
+          Enable gpu_packages_auto_add_apt_sources_enable or manage APT
+          outside of this role.
+
+    - name: 'Install | APT SOURCE REQUIRED'
+      when: not gpu_packages_auto_add_apt_sources_enable
+      ansible.builtin.fail:
+        msg: |
+          Required packages could not be installed.
+
+          GPU requires APT Debian components:
+          * contrib
+          * non-free
+          * non-free-firmware
+
+          gpu_packages_auto_add_apt_sources_enable=true
+
+          Automatically adding required Debian components ...
+
+    - name: 'Install | packages (modify APT debian repository)'
+      when: gpu_packages_auto_add_apt_sources_enable
+      ansible.builtin.include_role:
+        name: 'r_pufky.deb.apt'
+      vars:
+        apt_packages:
+          - '{{ gpu_role_packages }}'
+          - '{{ gpu_packages }}'
+        apt_packages_absent:
+          - '{{ gpu_packages_absent }}'
+        apt_sources: '{{ gpu_apt_sources }}'
+        apt_package_update_cache: true

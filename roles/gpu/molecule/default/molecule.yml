@@ -1,0 +1,51 @@
+---
+# VM's will not have upgradable firmware but will be able to install and run
+# fwupd without an issue. Test that role had no runtime errors and that the
+# firmware manager package has been installed.
+
+dependency:
+  name: 'galaxy'
+driver:
+  name: 'vagrant'
+  provider:
+    name: 'virtualbox'
+    config_options:
+      ssh.keep_alive: true
+      ssh.remote_user: 'root'
+    options:
+      append_platform_to_hostname: false
+provisioner:
+  name: 'ansible'
+  config_options:
+    defaults:
+      interpreter_python: 'auto_silent'  # suppress warnings
+      callback_whitelist: 'profile_tasks, timer, yaml'  # output profiling info
+platforms:
+  - name: 'firmware-debian-12-vm-default'
+    box: 'debian/bookworm64'
+    memory: 4096
+    cpus: 2
+    interfaces:
+      - network_name: private_network  # network_name required
+        auto_config: true
+        type: 'dhcp'
+verifier:
+  name: 'ansible'
+lint: |
+  set -e
+  yamllint .
+  ansible-lint .
+scenario:
+  test_sequence:
+    # - 'dependency'
+    # - 'cleanup'
+    - 'destroy'
+    - 'syntax'
+    - 'create'
+    # - 'prepare'
+    - 'converge'
+    - 'idempotence'
+    # - 'side_effect'
+    - 'verify'
+    # - 'cleanup'
+    - 'destroy'

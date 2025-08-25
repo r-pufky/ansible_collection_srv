@@ -1,0 +1,82 @@
+---
+# yamllint disable rule:line-length
+DOCUMENTATION:
+  name: 'snake2pascal'
+  author: 'r_pufky'
+  version_added: '2.18.0'
+  short_description: 'Convert snake_case to PascalCase'
+  positional: _input, prepend, append
+  description:
+    - Transforms strings from snake_case to PascalCase; optionally prepending
+       or appending strings to the transformed value.
+    - For dicts all keys are recursively transformed.
+    - For lists each element is recursively transformed using the rules above.
+  options:
+    _input:
+      description:
+        - Input data structure to transform.
+      type: [dict, list, str]
+      required: true
+    prepend:
+      description: String to prepend to the transformed data.
+      type: str
+      default: ''
+    value_name:
+      description: String to append to the transformed data.
+      type: str
+      default: ''
+  seealso:
+    - name: Pascal Case format
+      description: Detailed explanation of PascalCase format.
+      link: https://en.wikipedia.org/wiki/Camel_case
+    - name: Snake Case format
+      description: Detailed explanation of snake_case format.
+      link: https://en.wikipedia.org/wiki/Snake_case
+    - plugin_type: filter
+      plugin: r_pufky.srv.snake2pascal
+
+EXAMPLES: |
+  # dict => {
+  #   'string_test': 'string_test_string',
+  #   'other_dict': {
+  #     'other_dict_key': 'test_key',
+  #     'other_dict_key2': 'test_key_list2'
+  #   },
+  #   'list_key': ['test_key_list', 'test_key_list2', 'test_key_list3']
+  # }
+  # transform => {
+  #   'StringTest': 'string_test_string',
+  #   'OtherDict': {
+  #     'OtherDictKey': 'test_key',
+  #     'OtherDictKey2': 'test_key_2'
+  #   },
+  #   'ListKey': ['test_key_list', 'test_key_list2', 'test_key_list3']
+  # }
+  transform: '{{ dict | r_pufky.srv.snake2pascal }}'
+
+  # list => [
+  #   'string_test',
+  #   ['inner_list_test', 'inner_list_test_2'],
+  #   {'other_dict_key': 'test_key', 'other_dict_key_2': 'test_key_2'}
+  # ]
+  # transform => [
+  #   'StringTest',
+  #   ['InnerListTest', 'InnerListTest2'],
+  #   {'OtherDictKey': 'test_key', 'OtherDictKey2': 'test_key_2'}
+  # ]
+  transform: '{{ list | r_pufky.srv.snake2pascal }}'
+
+  # str => "string_test"
+  # transform => 'StringTest'
+  transform: '{{ str | r_pufky.srv.snake2pascal }}'
+  # prepend => 'role_StringTest'
+  transform: '{{ str | r_pufky.srv.snake2pascal(prepend=("role_")) }}'
+  # append => 'StringTest_app'
+  transform: '{{ str | r_pufky.srv.snake2pascal(append=("_app")) }}'
+  # both => 'role_StringTest_app'
+  transform: '{{ str | r_pufky.srv.snake2pascal(prepent("role_", append=("_app"))) }}'
+
+RETURN:
+  _value:
+    description: Original datatype transformed from snake_case to PascalCase.
+    type: [dict, list, str]
