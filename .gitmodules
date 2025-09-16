@@ -55,3 +55,6 @@
 [submodule "roles/jellyseerr"]
 	path = roles/jellyseerr
 	url = https://github.com/r-pufky/ansible_jellyseerr
+[submodule "roles/pihole"]
+	path = roles/pihole
+	url = https://github.com/r-pufky/ansible_pihole

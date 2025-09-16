@@ -1,6 +1,80 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  13.0.3:
+    release_date: '2025-09-16'
+    codename: '2025-09-16'
+    changes:
+      release_summary: 'Add PiHole.'
+      major_changes:
+        - 'roles/pihole - Added with minimum 6.x version support.'
+      minor_changes:
+        - 'N/A'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
+    objects:
+      role:
+        - name: 'deluge'
+          description: 'Deluge bittorrent client.'
+          namespace: null
+        - name: 'forgejo'
+          description: 'Forgejo installation from public release tarball.'
+          namespace: null
+        - name: 'jellyseerr'
+          description: 'Jellyseerr installation from public release tarball.'
+          namespace: null
+        - name: 'lidarr'
+          description: 'Lidarr installation from public release tarball.'
+          namespace: null
+        - name: 'maria'
+          description: 'Manage Maria databases.'
+          namespace: null
+        - name: 'nzbget'
+          description: 'NZBGet (nzbget.com) using maintained Debian release.'
+          namespace: null
+        - name: 'overseerr'
+          description: 'Overseerr install from source on Debian.'
+          namespace: null
+        - name: 'paperless_ngx'
+          description:
+            'Paperless-NGX installation from public release tarball.'
+          namespace: null
+        - name: 'pihole'
+          description:
+            'PiHole installation from public release.'
+          namespace: null
+        - name: 'plex'
+          description: 'Plex Media Server supporting PlexPass entitlements.'
+          namespace: null
+        - name: 'postgres'
+          description: 'Manage Postgres databases.'
+          namespace: null
+        - name: 'radarr'
+          description: 'Radarr installation from public release tarball.'
+          namespace: null
+        - name: 'readarr'
+          description: 'Readarr installation from public release tarball.'
+          namespace: null
+        - name: 'sonarr'
+          description: 'Sonarr installation from public release tarball.'
+          namespace: null
+        - name: 'sqlite'
+          description: 'Execute SQLite commands.'
+          namespace: null
+        - name: 'vsftpd'
+          description: 'VSFTPd service configuration.'
+          namespace: null
+        - name: 'whisparr'
+          description: 'Whisparr installation from public release tarball.'
+          namespace: null
   13.0.2:
     release_date: '2025-09-08'
     codename: '2025-09-08'
