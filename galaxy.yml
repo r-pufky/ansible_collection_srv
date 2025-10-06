@@ -1,7 +1,7 @@
 ---
 namespace: 'r_pufky'
 name: 'srv'
-version: '13.0.3'
+version: '13.1.0'
 readme: 'README.md'
 authors:
   - 'Robert Pufky <rpufky@gmail.com> (https://github.com/r-pufky)'
@@ -20,8 +20,9 @@ tags:
   - 'tools'
   - 'networking'
 dependencies:
-  'r_pufky.lib': '>=13.0.2,<14.0.0'
-  'r_pufky.deb': '>=13.0.3,<14.0.0'
+  'r_pufky.lib': '>=13.0.3,<14.0.0'
+  'r_pufky.data': '>=3.0.2'
+  'r_pufky.deb': '>=13.0.4,<14.0.0'
   'ansible.posix': '=1.6.2'
   'community.general': '=10.6.0'
   'community.mysql': '=3.13.0'
@@ -32,13 +33,6 @@ documentation: 'https://github.com/r-pufky/ansible_colection_srv/docs/README.md'
 homepage: 'https://github.com/r-pufky/ansible_collection_srv'
 issues: 'https://github.com/r-pufky/ansible_collection_srv/issues'
 
-# A list of file glob-like patterns used to filter any files or directories
-# that should not be included in the build artifact. A pattern is matched from
-# the relative path of the file or directory of the collection directory. This
-# uses 'fnmatch' to match the files or directories. Some directories and files
-# like 'galaxy.yml', '*.pyc', '*.retry', and '.git' are always filtered.
-#
-# Mutually exclusive with 'manifest'.
 build_ignore:
   - '*molecule/*'  # Do not include molecule testing in release.
   - 'ansible.env'  # Development ansible environment.
@@ -46,7 +40,8 @@ build_ignore:
   - '.vscode'  # VSCodium settings.
   - 'TODO.md'  # Development staging todo messages.
   - 'COMMIT.md'  # Development staging commit messages.
-  - 'plugins/**'  # TODO(collection): until plugins are actually added.
   - 'roles/dnsrobocert'  # TODO(collection): remove when migration completed.
   - 'roles/gpu'  # TODO(collection): remove when migration completed.
   - 'roles/fika'  # TODO(collection): remove when migration completed.
+  - 'roles/unifi'  # TODO(collection): remove when migration completed.
+  - 'docs/*'  # Development docs are a separate repo and not end user.

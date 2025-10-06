@@ -58,3 +58,12 @@
 [submodule "roles/pihole"]
 	path = roles/pihole
 	url = https://github.com/r-pufky/ansible_pihole
+[submodule "roles/firefly"]
+	path = roles/firefly
+	url = https://github.com/r-pufky/ansible_firefly
+[submodule "roles/nginx"]
+	path = roles/nginx
+	url = https://github.com/r-pufky/ansible_nginx
+[submodule "roles/mongodb"]
+	path = roles/mongodb
+	url = https://github.com/r-pufky/ansible_mongodb
