@@ -67,3 +67,6 @@
 [submodule "roles/mongodb"]
 	path = roles/mongodb
 	url = https://github.com/r-pufky/ansible_mongodb
+[submodule "roles/unifi"]
+	path = roles/unifi
+	url = https://github.com/r-pufky/ansible_unifi
