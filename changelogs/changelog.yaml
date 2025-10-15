@@ -1,18 +1,15 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
-  13.1.3:
-    release_date: '2025-10-13'
-    codename: '2025-10-13'
+  13.1.4:
+    release_date: '2025-10-15'
+    codename: '2025-10-15'
     changes:
-      release_summary: 'Update collection dependencies.'
+      release_summary: 'Add Mox Email Server.'
       major_changes:
-        - 'N/A'
+        - 'Added roles/mox - Email server.'
       minor_changes:
-        - 'ansible.posix to 2.1.0'
-        - 'community.general to 11.4.0'
-        - 'community.mysql to 4.0.0'
-        - 'community.postgresql to 4.1.0'
+        - 'roles/* - Documentation links updated.'
       breaking_changes:
         - 'N/A'
       deprecated_features:

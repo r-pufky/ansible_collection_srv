@@ -1,7 +1,7 @@
 ---
 namespace: 'r_pufky'
 name: 'srv'
-version: '13.1.3'
+version: '13.1.4'
 readme: 'README.md'
 authors:
   - 'Robert Pufky <rpufky@gmail.com> (https://github.com/r-pufky)'
@@ -20,16 +20,16 @@ tags:
   - 'tools'
   - 'networking'
 dependencies:
-  'r_pufky.lib': '>=13.0.5,<14.0.0'
+  'r_pufky.lib': '>=13.0.6,<14.0.0'
   'r_pufky.data': '>=3.0.3'
-  'r_pufky.deb': '>=13.0.6,<14.0.0'
+  'r_pufky.deb': '>=13.0.7,<14.0.0'
   'ansible.posix': '=2.1.0'
   'community.general': '=11.4.0'
   'community.mysql': '=4.0.0'
   'community.postgresql': '=4.1.0'
 
 repository: 'https://github.com/r-pufky/ansible_collection_srv'
-documentation: 'https://github.com/r-pufky/ansible_colection_srv/docs/README.md'
+documentation: 'https://github.com/r-pufky/ansible_collection_docs'
 homepage: 'https://github.com/r-pufky/ansible_collection_srv'
 issues: 'https://github.com/r-pufky/ansible_collection_srv/issues'
 
