@@ -73,3 +73,6 @@
 [submodule "roles/mox"]
 	path = roles/mox
 	url = https://github.com/r-pufky/ansible_mox
+[submodule "roles/navidrome"]
+	path = roles/navidrome
+	url = https://github.com/r-pufky/ansible_navidrome
