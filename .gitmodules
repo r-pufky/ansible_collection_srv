@@ -76,3 +76,6 @@
 [submodule "roles/navidrome"]
 	path = roles/navidrome
 	url = https://github.com/r-pufky/ansible_navidrome
+[submodule "roles/traefik"]
+	path = roles/traefik
+	url = https://github.com/r-pufky/ansible_traefik
