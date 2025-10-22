@@ -1,6 +1,101 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  13.1.8:
+    release_date: '2025-10-22'
+    codename: '2025-10-22'
+    changes:
+      release_summary: 'Update paperless to 2.19.1.'
+      major_changes:
+        - 'roles/paperless_ngx = 13.0.0-2.19.1-1.0.0.'
+      minor_changes:
+        - 'N/A'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
+    objects:
+      role:
+        - name: 'deluge'
+          description: 'Deluge bittorrent client.'
+          namespace: null
+        - name: 'firefly'
+          description: 'Firefly installation from public release tarball.'
+          namespace: null
+        - name: 'forgejo'
+          description: 'Forgejo installation from public release tarball.'
+          namespace: null
+        - name: 'jellyseerr'
+          description: 'Jellyseerr installation from public release tarball.'
+          namespace: null
+        - name: 'lidarr'
+          description: 'Lidarr installation from public release tarball.'
+          namespace: null
+        - name: 'maria'
+          description: 'Manage Maria databases.'
+          namespace: null
+        - name: 'mongodb'
+          description: 'Manage MongoDB databases.'
+          namespace: null
+        - name: 'mox'
+          description: 'Manage Mox (Mail) server.'
+          namespace: null
+        - name: 'navidrome'
+          description: 'Navidrome music streaming server.'
+          namespace: null
+        - name: 'nginx'
+          description: 'NGINX installation from public release tarball.'
+          namespace: null
+        - name: 'nzbget'
+          description: 'NZBGet (nzbget.com) using maintained Debian release.'
+          namespace: null
+        - name: 'overseerr'
+          description: 'Overseerr install from source on Debian.'
+          namespace: null
+        - name: 'paperless_ngx'
+          description:
+            'Paperless-NGX installation from public release tarball.'
+          namespace: null
+        - name: 'pihole'
+          description:
+            'PiHole installation from public release.'
+          namespace: null
+        - name: 'plex'
+          description: 'Plex Media Server supporting PlexPass entitlements.'
+          namespace: null
+        - name: 'postgres'
+          description: 'Manage Postgres databases.'
+          namespace: null
+        - name: 'radarr'
+          description: 'Radarr installation from public release tarball.'
+          namespace: null
+        - name: 'readarr'
+          description: 'Readarr installation from public release tarball.'
+          namespace: null
+        - name: 'sonarr'
+          description: 'Sonarr installation from public release tarball.'
+          namespace: null
+        - name: 'sqlite'
+          description: 'Execute SQLite commands.'
+          namespace: null
+        - name: 'traefik'
+          description: 'Application Proxy Server.'
+          namespace: null
+        - name: 'unifi'
+          description: 'Unifi OS / Legacy.'
+          namespace: null
+        - name: 'vsftpd'
+          description: 'VSFTPd service configuration.'
+          namespace: null
+        - name: 'whisparr'
+          description: 'Whisparr installation from public release tarball.'
+          namespace: null
   13.1.7:
     release_date: '2025-10-21'
     codename: '2025-10-21'
