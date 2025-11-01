@@ -1,30 +1,9 @@
-[submodule "roles/sonarr"]
-	path = roles/sonarr
-	url = https://github.com/r-pufky/ansible_sonarr
 [submodule "roles/sqlite"]
 	path = roles/sqlite
 	url = https://github.com/r-pufky/ansible_sqlite
 [submodule "roles/plex"]
 	path = roles/plex
 	url = https://github.com/r-pufky/ansible_plex
-[submodule "roles/nzbget"]
-	path = roles/nzbget
-	url = https://github.com/r-pufky/ansible_nzbget
-[submodule "roles/radarr"]
-	path = roles/radarr
-	url = https://github.com/r-pufky/ansible_radarr
-[submodule "roles/lidarr"]
-	path = roles/lidarr
-	url = https://github.com/r-pufky/ansible_lidarr
-[submodule "roles/readarr"]
-	path = roles/readarr
-	url = https://github.com/r-pufky/ansible_readarr
-[submodule "roles/whisparr"]
-	path = roles/whisparr
-	url = https://github.com/r-pufky/ansible_whisparr
-[submodule "roles/deluge"]
-	path = roles/deluge
-	url = https://github.com/r-pufky/ansible_deluge
 [submodule "roles/gpu"]
 	path = roles/gpu
 	url = https://github.com/r-pufky/ansible_gpu
@@ -52,9 +31,6 @@
 [submodule "docs"]
 	path = docs
 	url = https://github.com/r-pufky/ansible_collection_docs
-[submodule "roles/jellyseerr"]
-	path = roles/jellyseerr
-	url = https://github.com/r-pufky/ansible_jellyseerr
 [submodule "roles/pihole"]
 	path = roles/pihole
 	url = https://github.com/r-pufky/ansible_pihole

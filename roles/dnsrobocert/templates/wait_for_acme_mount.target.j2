@@ -1,7 +1,0 @@
-# Wait for encrypted ZFS mount with ACME data readable.
-[Unit]
-Description=Hold target launch until encrypted ZFS unlocked and ACME data readable.
-TimeoutStartSec=infinity
-ConditionPathExists={{ acme_base }}/.acme.env
-ExecStart=/usr/bin/sleep 1000
-RemainAfterExit=yes

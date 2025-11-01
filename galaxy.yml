@@ -1,7 +1,7 @@
 ---
 namespace: 'r_pufky'
 name: 'srv'
-version: '13.1.12'
+version: '13.2.0'
 readme: 'README.md'
 authors:
   - 'Robert Pufky <rpufky@gmail.com> (https://github.com/r-pufky)'
@@ -38,7 +38,4 @@ build_ignore:
   - '.vscode'  # VSCodium settings.
   - 'TODO.md'  # Development staging todo messages.
   - 'COMMIT.md'  # Development staging commit messages.
-  - 'roles/dnsrobocert'  # TODO(collection): remove when migration completed.
-  - 'roles/gpu'  # TODO(collection): remove when migration completed.
-  - 'roles/fika'  # TODO(collection): remove when migration completed.
   - '*docs/*'  # Development docs are a separate repo and not end user.

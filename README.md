@@ -13,6 +13,7 @@ development setup, requirements, and submission practices. See Individual role
 documentation for usage.
 
 Related Collections:
+
 * [r_pufky.arr](https://galaxy.ansible.com/ui/repo/published/r_pufky/arr):
   Manage media retrieval services.
 * [r_pufky.deb](https://galaxy.ansible.com/ui/repo/published/r_pufky/deb):
@@ -32,6 +33,7 @@ Related Collections:
 **{OS}.{MAJOR}.{MINOR}**
 
 `12.2.13`
+
 * 12 - Debian 12 (bookworm) _breaking_.
 * 2 - Collection major version 2 _breaking_.
 * 13 - Collection minor version 13 _non-breaking_.
