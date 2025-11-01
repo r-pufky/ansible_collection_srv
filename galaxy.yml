@@ -1,13 +1,11 @@
 ---
 namespace: 'r_pufky'
 name: 'srv'
-version: '13.1.11'
+version: '13.1.12'
 readme: 'README.md'
 authors:
   - 'Robert Pufky <rpufky@gmail.com> (https://github.com/r-pufky)'
-description: |
-  Serve. Complete infrastructure management. Provide bare-metal,
-  virtualization, container, OS, and service management.
+description: 'Manage services.'
 license_file: 'LICENSE'
 tags:
   - 'linux'
@@ -43,4 +41,4 @@ build_ignore:
   - 'roles/dnsrobocert'  # TODO(collection): remove when migration completed.
   - 'roles/gpu'  # TODO(collection): remove when migration completed.
   - 'roles/fika'  # TODO(collection): remove when migration completed.
-  - 'docs/*'  # Development docs are a separate repo and not end user.
+  - '*docs/*'  # Development docs are a separate repo and not end user.
