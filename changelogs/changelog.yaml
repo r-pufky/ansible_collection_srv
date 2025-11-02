@@ -1,6 +1,63 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  13.3.0:
+    release_date: '2025-11-02'
+    codename: '2025-11-02'
+    changes:
+      release_summary: 'Migrate media management to r_pufky.media.'
+      major_changes:
+        - 'N/A'
+      minor_changes:
+      breaking_changes:
+        - 'roles/firefly - r_pufky.media.firefly.'
+        - 'roles/navidrome - r_pufky.media.navidrome.'
+        - 'roles/paperless_ngx - r_pufky.media.paperless_ngx.'
+        - 'roles/plex - r_pufky.media.plex.'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
+    objects:
+      role:
+        - name: 'forgejo'
+          description: 'Forgejo installation from public release tarball.'
+          namespace: null
+        - name: 'maria'
+          description: 'Manage Maria databases.'
+          namespace: null
+        - name: 'mongodb'
+          description: 'Manage MongoDB databases.'
+          namespace: null
+        - name: 'mox'
+          description: 'Manage Mox (Mail) server.'
+          namespace: null
+        - name: 'nginx'
+          description: 'NGINX installation from public release tarball.'
+          namespace: null
+        - name: 'pihole'
+          description:
+            'PiHole installation from public release.'
+          namespace: null
+        - name: 'postgres'
+          description: 'Manage Postgres databases.'
+          namespace: null
+        - name: 'sqlite'
+          description: 'Execute SQLite commands.'
+          namespace: null
+        - name: 'traefik'
+          description: 'Application Proxy Server.'
+          namespace: null
+        - name: 'unifi'
+          description: 'Unifi OS / Legacy.'
+          namespace: null
+        - name: 'vsftpd'
+          description: 'VSFTPd service configuration.'
+          namespace: null
   13.2.2:
     release_date: '2025-11-02'
     codename: '2025-11-02'

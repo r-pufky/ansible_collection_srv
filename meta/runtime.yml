@@ -3,6 +3,11 @@ requires_ansible: '>=2.18.0'
 
 plugin_routing:
   modules:
+    firefly:
+      deprecation:
+        removal_version: '13.3.0'
+        warning_text: 'Firefly migrated to r_pufky.media.firefly.'
+      redirect: 'r_pufky.media.firefly'
     deluge:
       deprecation:
         removal_version: '13.2.0'
@@ -28,6 +33,11 @@ plugin_routing:
         removal_version: '13.2.0'
         warning_text: 'NZBGet migrated to r_pufky.arr.nzbget.'
       redirect: 'r_pufky.arr.nzbget'
+    paperless_ngx:
+      deprecation:
+        removal_version: '13.3.0'
+        warning_text: 'Paperless-NGX migrated to r_pufky.media.paperless_ngx.'
+      redirect: 'r_pufky.media.paperless_ngx'
     plex:
       deprecation:
         removal_version: '13.3.0'

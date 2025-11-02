@@ -1,9 +1,6 @@
 [submodule "roles/sqlite"]
 	path = roles/sqlite
 	url = https://github.com/r-pufky/ansible_sqlite
-[submodule "roles/plex"]
-	path = roles/plex
-	url = https://github.com/r-pufky/ansible_plex
 [submodule "roles/gpu"]
 	path = roles/gpu
 	url = https://github.com/r-pufky/ansible_gpu
@@ -19,9 +16,6 @@
 [submodule "roles/postgres"]
 	path = roles/postgres
 	url = https://github.com/r-pufky/ansible_postgres
-[submodule "roles/paperless_ngx"]
-	path = roles/paperless_ngx
-	url = https://github.com/r-pufky/ansible_paperless_ngx
 [submodule "roles/codeberg"]
 	path = roles/codeberg
 	url = https://github.com/r-pufky/ansible_codeberg
@@ -31,9 +25,6 @@
 [submodule "roles/pihole"]
 	path = roles/pihole
 	url = https://github.com/r-pufky/ansible_pihole
-[submodule "roles/firefly"]
-	path = roles/firefly
-	url = https://github.com/r-pufky/ansible_firefly
 [submodule "roles/nginx"]
 	path = roles/nginx
 	url = https://github.com/r-pufky/ansible_nginx
@@ -46,9 +37,6 @@
 [submodule "roles/mox"]
 	path = roles/mox
 	url = https://github.com/r-pufky/ansible_mox
-[submodule "roles/navidrome"]
-	path = roles/navidrome
-	url = https://github.com/r-pufky/ansible_navidrome
 [submodule "roles/traefik"]
 	path = roles/traefik
 	url = https://github.com/r-pufky/ansible_traefik

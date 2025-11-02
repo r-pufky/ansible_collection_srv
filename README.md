@@ -16,6 +16,8 @@ documentation for usage.
   Manage Debian OS foundational services.
 * [r_pufky.game](https://galaxy.ansible.com/ui/repo/published/r_pufky/game):
   Manage linux dedicated gaming servers.
+* [r_pufky.media](https://galaxy.ansible.com/ui/repo/published/r_pufky/media):
+  Manage management and streaming services.
 * [r_pufky.srv](https://galaxy.ansible.com/ui/repo/published/r_pufky/srv):
   Manage services.
 * [r_pufky.data](https://galaxy.ansible.com/ui/repo/published/r_pufky/data):
