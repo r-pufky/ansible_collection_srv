@@ -18,11 +18,21 @@ plugin_routing:
         removal_version: '13.2.0'
         warning_text: 'Lidarr migrated to r_pufky.arr.lidarr.'
       redirect: 'r_pufky.arr.lidarr'
+    navidrome:
+      deprecation:
+        removal_version: '13.3.0'
+        warning_text: 'NZBGet migrated to r_pufky.media.navidrome.'
+      redirect: 'r_pufky.media.navidome'
     nzbget:
       deprecation:
         removal_version: '13.2.0'
         warning_text: 'NZBGet migrated to r_pufky.arr.nzbget.'
       redirect: 'r_pufky.arr.nzbget'
+    plex:
+      deprecation:
+        removal_version: '13.3.0'
+        warning_text: 'NZBGet migrated to r_pufky.media.plex.'
+      redirect: 'r_pufky.media.plex'
     radarr:
       deprecation:
         removal_version: '13.2.0'

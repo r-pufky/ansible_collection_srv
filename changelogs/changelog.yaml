@@ -1,6 +1,76 @@
 ---
 # https://github.com/ansible-community/antsibull-changelog/blob/main/docs/changelog.yaml-format.md
 releases:
+  13.2.2:
+    release_date: '2025-11-02'
+    codename: '2025-11-02'
+    changes:
+      release_summary: 'Update roles before migration to r_pufky.media.'
+      major_changes:
+        - 'N/A'
+      minor_changes:
+        - 'roles/firefly - 13-6.4.4-1.0.0.'
+        - 'roles/navidrome - 13-0.58.0-1.0.2.'
+        - 'roles/plex - 13-1.42.2.10156-1.0.1.'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
+    objects:
+      role:
+        - name: 'firefly'
+          description: 'Firefly installation from public release tarball.'
+          namespace: null
+        - name: 'forgejo'
+          description: 'Forgejo installation from public release tarball.'
+          namespace: null
+        - name: 'maria'
+          description: 'Manage Maria databases.'
+          namespace: null
+        - name: 'mongodb'
+          description: 'Manage MongoDB databases.'
+          namespace: null
+        - name: 'mox'
+          description: 'Manage Mox (Mail) server.'
+          namespace: null
+        - name: 'navidrome'
+          description: 'Navidrome music streaming server.'
+          namespace: null
+        - name: 'nginx'
+          description: 'NGINX installation from public release tarball.'
+          namespace: null
+        - name: 'paperless_ngx'
+          description:
+            'Paperless-NGX installation from public release tarball.'
+          namespace: null
+        - name: 'pihole'
+          description:
+            'PiHole installation from public release.'
+          namespace: null
+        - name: 'plex'
+          description: 'Plex Media Server supporting PlexPass entitlements.'
+          namespace: null
+        - name: 'postgres'
+          description: 'Manage Postgres databases.'
+          namespace: null
+        - name: 'sqlite'
+          description: 'Execute SQLite commands.'
+          namespace: null
+        - name: 'traefik'
+          description: 'Application Proxy Server.'
+          namespace: null
+        - name: 'unifi'
+          description: 'Unifi OS / Legacy.'
+          namespace: null
+        - name: 'vsftpd'
+          description: 'VSFTPd service configuration.'
+          namespace: null
   13.2.1:
     release_date: '2025-11-01'
     codename: '2025-11-01'
