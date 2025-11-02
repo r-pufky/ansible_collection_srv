@@ -28,9 +28,6 @@
 [submodule "roles/forgejo"]
 	path = roles/forgejo
 	url = https://github.com/r-pufky/ansible_forgejo
-[submodule "docs"]
-	path = docs
-	url = https://github.com/r-pufky/ansible_collection_docs
 [submodule "roles/pihole"]
 	path = roles/pihole
 	url = https://github.com/r-pufky/ansible_pihole

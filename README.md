@@ -1,7 +1,4 @@
-# Ansible Collection - r_pufky.srv
-
-Manage services.
-
+# Manage services.
 > Use a **static** version.
 >
 > Many roles are still being ported to galaxy-ng and may require collection
@@ -12,8 +9,7 @@ See [Documentation](https://github.com/r-pufky/ansible_collection_docs) for
 development setup, requirements, and submission practices. See Individual role
 documentation for usage.
 
-Related Collections:
-
+## Related Collections
 * [r_pufky.arr](https://galaxy.ansible.com/ui/repo/published/r_pufky/arr):
   Manage media retrieval services.
 * [r_pufky.deb](https://galaxy.ansible.com/ui/repo/published/r_pufky/deb):
@@ -41,3 +37,11 @@ Related Collections:
 Previous OS releases:
 
 * **[12.x.x](https://github.com/r-pufky/ansible_collection_srv/tree/12.x)**: 12 Bookworm.
+
+## License
+[AGPL-3.0 License](https://www.tldrlegal.com/license/gnu-affero-general-public-license-v3-agpl-3-0)
+ [(direct link)](https://github.com/r-pufky/ansible_tests/blob/main/LICENSE)
+
+## Author Information
+PGP Fingerprint: [466EEC2B67516C7117C85CE3A0BC35D16698BAB9](https://keys.openpgp.org/vks/v1/by-fingerprint/466EEC2B67516C7117C85CE3A0BC35D16698BAB9)
+| [github gist](https://gist.github.com/r-pufky/a8df36977c55b5bb20829267c4c49d22)

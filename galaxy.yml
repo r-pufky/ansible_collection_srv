@@ -1,7 +1,7 @@
 ---
 namespace: 'r_pufky'
 name: 'srv'
-version: '13.2.0'
+version: '13.2.1'
 readme: 'README.md'
 authors:
   - 'Robert Pufky <rpufky@gmail.com> (https://github.com/r-pufky)'
@@ -18,9 +18,9 @@ tags:
   - 'tools'
   - 'networking'
 dependencies:
-  'r_pufky.lib': '>=13.0.6,<14.0.0'
-  'r_pufky.data': '>=3.0.3'
-  'r_pufky.deb': '>=13.0.8,<14.0.0'
+  'r_pufky.lib': '>=13.0.8,<14.0.0'
+  'r_pufky.data': '>=3.0.5'
+  'r_pufky.deb': '>=13.0.10,<14.0.0'
   'ansible.posix': '=2.1.0'
   'community.general': '=11.4.0'
   'community.mysql': '=4.0.0'
