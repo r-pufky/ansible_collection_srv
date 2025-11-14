@@ -1,7 +1,7 @@
 ---
 namespace: 'r_pufky'
 name: 'srv'
-version: '13.3.0'
+version: '13.3.1'
 readme: 'README.md'
 authors:
   - 'Robert Pufky <rpufky@gmail.com> (https://github.com/r-pufky)'
@@ -27,7 +27,7 @@ dependencies:
   'community.postgresql': '=4.1.0'
 
 repository: 'https://github.com/r-pufky/ansible_collection_srv'
-documentation: 'https://github.com/r-pufky/ansible_collection_docs'
+documentation: 'https://r-pufky.github.io/ansible_collection_docs'
 homepage: 'https://github.com/r-pufky/ansible_collection_srv'
 issues: 'https://github.com/r-pufky/ansible_collection_srv/issues'
 
