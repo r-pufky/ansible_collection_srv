@@ -40,3 +40,6 @@
 [submodule "roles/traefik"]
 	path = roles/traefik
 	url = https://github.com/r-pufky/ansible_traefik
+[submodule "roles/gcp_ddns"]
+	path = roles/gcp_ddns
+	url = https://github.com/r-pufky/ansible_gcp_ddns

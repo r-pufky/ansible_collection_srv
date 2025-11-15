@@ -5,7 +5,7 @@
 > changes during migrations. **OS** & **Major** version changes require manual
 > review. This applies until migration is complete and this message is removed.
 
-See [Documentation](https://github.com/r-pufky/ansible_collection_docs) for
+See [Documentation](https://r-pufky.github.io/ansible_collection_docs) for
 development setup, requirements, and submission practices. See Individual role
 documentation for usage.
 
