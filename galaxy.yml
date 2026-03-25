@@ -1,7 +1,7 @@
 ---
 namespace: 'r_pufky'
 name: 'srv'
-version: '13.3.6'
+version: '1.0.0'
 readme: 'README.md'
 authors:
   - 'Robert Pufky <rpufky@gmail.com> (https://github.com/r-pufky)'
@@ -18,23 +18,32 @@ tags:
   - 'tools'
   - 'networking'
 dependencies:
-  'r_pufky.lib': '>=13.0.8,<14.0.0'
-  'r_pufky.data': '>=3.0.5'
-  'r_pufky.deb': '>=13.0.10,<14.0.0'
-  'ansible.posix': '=2.1.0'
-  'community.general': '=11.4.0'
-  'community.mysql': '=4.0.0'
-  'community.postgresql': '=4.1.0'
+  'r_pufky.data': '>=3.2.0,<4.0.0'
+  'r_pufky.deb': '>=4.0.0,<5.0.0'
+  'ansible.posix': '>=2.1.0,<3.0.0'
+  'community.general': '>=12.4.0,<13.0.0'
+  'community.mysql': '>=4.2.0,<5.0.0'
+  'community.postgresql': '>=4.2.0,<5.0.0'
 
 repository: 'https://github.com/r-pufky/ansible_collection_srv'
-documentation: 'https://r-pufky.github.io/ansible_collection_docs'
+documentation: 'https://r-pufky.github.io/ansible_docs'
 homepage: 'https://github.com/r-pufky/ansible_collection_srv'
 issues: 'https://github.com/r-pufky/ansible_collection_srv/issues'
 
+# Do not include: testing, environments, caches, IDE settings, or staging
+# messages in release tarball.
 build_ignore:
-  - '*molecule/*'  # Do not include molecule testing in release.
-  - 'ansible.env'  # Development ansible environment.
-  - '.ansible'  # Ansible collection cache for role testing.
-  - '.vscode'  # VSCodium settings.
-  - 'TODO.md'  # Development staging todo messages.
-  - 'COMMIT.md'  # Development staging commit messages.
+  - '*.ansible'
+  - '*.gitignore'
+  - '*.gitattributes'
+  - '*.gitmodules'
+  - '*.git'
+  - '*.venv'
+  - '*.envrc'
+  - '*.vscode'
+  - '*molecule'
+  - 'ansible.env'
+  - 'pyproject.toml'
+  - 'uv.lock'
+  - 'TODO.md'
+  - 'COMMIT.md'
