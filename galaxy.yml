@@ -19,7 +19,7 @@ tags:
   - 'networking'
 dependencies:
   'r_pufky.data': '>=3.2.1,<4.0.0'
-  'r_pufky.deb': '>=4.0.0,<5.0.0'
+  'r_pufky.deb': '>=4.0.1,<5.0.0'
   'ansible.posix': '>=2.1.0,<3.0.0'
   'community.general': '>=12.5.0,<13.0.0'
   'community.mysql': '>=4.2.0,<5.0.0'
