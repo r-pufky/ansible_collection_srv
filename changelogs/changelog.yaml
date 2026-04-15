@@ -1,6 +1,66 @@
 ---
 ancestor: 0.6.6
 releases:
+  1.0.1:
+    release_date: '2026-04-15'
+    codename: '2026-04-15'
+    changes:
+      release_summary: 'Resolve real-world edge cases.'
+      major_changes:
+        - 'N/A'
+      minor_changes:
+        - 'r_pufky.data - 3.2.2 - Update documentation.'
+        - 'r_pufky.deb - 4.0.3 - Update documentation.'
+        - 'README.md - Add note about migration to non-beta release.'
+        - 'roles/forgejo - 4.0.3 - Resolve real-world edge cases.'
+        - 'roles/gcp_ddns - 1.0.4 - Check for immediate failure on service start.'
+        - 'roles/maria - 3.0.3 - Resolve real-world edge cases.'
+        - 'roles/mox - 2.0.3 - Resolve real-world edge cases.'
+        - 'roles/nginx - 3.0.1 - Resolve real-world edge cases.'
+        - 'roles/pihole - 6.0.1 - Resolve real-world edge cases.'
+        - 'roles/postgres - 3.0.2 - Resolve real-world edge cases.'
+        - 'roles/traefik - 3.0.2 - Resolve real-world edge cases.'
+        - 'roles/vsftpd - 5.0.3 - Use static role paths.'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
+    objects:
+      role:
+        - name: 'forgejo'
+          description: 'Forgejo installation from public release tarball.'
+          namespace: null
+        - name: 'gcp_ddns'
+          description: 'GCP Dynamic DNS updater.'
+          namespace: null
+        - name: 'maria'
+          description: 'Manage Maria databases.'
+          namespace: null
+        - name: 'mox'
+          description: 'Manage Mox (Mail) server.'
+          namespace: null
+        - name: 'nginx'
+          description: 'NGINX installation from public release tarball.'
+          namespace: null
+        - name: 'pihole'
+          description:
+            'PiHole installation from public release.'
+          namespace: null
+        - name: 'postgres'
+          description: 'Manage Postgres databases.'
+          namespace: null
+        - name: 'traefik'
+          description: 'Application Proxy Server.'
+          namespace: null
+        - name: 'vsftpd'
+          description: 'VSFTPd service configuration.'
+          namespace: null
   1.0.0:
     release_date: '2026-04-08'
     codename: '2026-04-08'

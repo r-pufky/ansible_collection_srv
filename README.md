@@ -2,6 +2,10 @@
 
 > Always use a **static** version.
 
+> 1.x.x release contains breaking changes **requiring** pre-existing role
+> changes. Recommend manually reviewing each role. Collection being rapidly
+> updated as real-world migration bugs are found.
+
 See [Documentation][a] for development setup, requirements, and submission
 practices. See Individual role documentation for usage.
 
@@ -21,7 +25,6 @@ practices. See Individual role documentation for usage.
 
 ## Author Information
 PGP: [466EEC2B67516C7117C85CE3A0BC35D16698BAB9][d] | [github gist][e]
-
 
 [a]: https://r-pufky.github.io/ansible_docs
 [b]: https://semver.org/spec/v2.0.0
