@@ -1,6 +1,55 @@
 ---
 ancestor: 0.6.6
 releases:
+  1.0.2:
+    release_date: '2026-04-18'
+    codename: '2026-04-18'
+    changes:
+      release_summary: 'Forgejo v15.0.0 LTS.'
+      major_changes:
+        - 'N/A'
+      minor_changes:
+        - 'roles/forgejo - 4.0.4 - v15.0.0 default (previous versions are fine).'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
+    objects:
+      role:
+        - name: 'forgejo'
+          description: 'Forgejo installation from public release tarball.'
+          namespace: null
+        - name: 'gcp_ddns'
+          description: 'GCP Dynamic DNS updater.'
+          namespace: null
+        - name: 'maria'
+          description: 'Manage Maria databases.'
+          namespace: null
+        - name: 'mox'
+          description: 'Manage Mox (Mail) server.'
+          namespace: null
+        - name: 'nginx'
+          description: 'NGINX installation from public release tarball.'
+          namespace: null
+        - name: 'pihole'
+          description:
+            'PiHole installation from public release.'
+          namespace: null
+        - name: 'postgres'
+          description: 'Manage Postgres databases.'
+          namespace: null
+        - name: 'traefik'
+          description: 'Application Proxy Server.'
+          namespace: null
+        - name: 'vsftpd'
+          description: 'VSFTPd service configuration.'
+          namespace: null
   1.0.1:
     release_date: '2026-04-15'
     codename: '2026-04-15'
