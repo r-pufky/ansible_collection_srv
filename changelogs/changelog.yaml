@@ -1,6 +1,59 @@
 ---
 ancestor: 0.6.6
 releases:
+  1.0.3:
+    release_date: '2026-09-17'
+    codename: '2026-09-17'
+    changes:
+      release_summary: 'Update default supported releases.'
+      major_changes:
+        - 'roles/mox - 2.1.0 - Validate 0.0.17. Mox updates are always considered major.'
+      minor_changes:
+        - 'roles/forgejo - 4.0.6 - Validate LTS 15.0.9.'
+        - 'roles/maria - 3.0.4 - Validate 12.3.'
+        - 'roles/nginx - 3.0.2 - Validate 1.31.6.'
+        - 'roles/traefik - 3.0.3 - Validate 3.7.13.'
+        - 'roles/pihole - 6.0.2 - Validate 6.4.3.'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
+    objects:
+      role:
+        - name: 'forgejo'
+          description: 'Forgejo installation from public release tarball.'
+          namespace: null
+        - name: 'gcp_ddns'
+          description: 'GCP Dynamic DNS updater.'
+          namespace: null
+        - name: 'maria'
+          description: 'Manage Maria databases.'
+          namespace: null
+        - name: 'mox'
+          description: 'Manage Mox (Mail) server.'
+          namespace: null
+        - name: 'nginx'
+          description: 'NGINX installation from public release tarball.'
+          namespace: null
+        - name: 'pihole'
+          description:
+            'PiHole installation from public release.'
+          namespace: null
+        - name: 'postgres'
+          description: 'Manage Postgres databases.'
+          namespace: null
+        - name: 'traefik'
+          description: 'Application Proxy Server.'
+          namespace: null
+        - name: 'vsftpd'
+          description: 'VSFTPd service configuration.'
+          namespace: null
   1.0.2:
     release_date: '2026-04-18'
     codename: '2026-04-18'
