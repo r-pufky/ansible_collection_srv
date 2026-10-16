@@ -1,6 +1,57 @@
 ---
 ancestor: 0.6.6
 releases:
+  1.0.5:
+    release_date: '2026-10-16'
+    codename: '2026-10-16'
+    changes:
+      release_summary: 'Update validated releases.'
+      major_changes:
+        - 'N/A'
+      minor_changes:
+        - 'roles/forgejo - 4.0.7 - Validate v15.0.10.'
+        - 'roles/nginx - 3.0.3 - Validate v1.31.7.'
+        - 'roles/traefik - 3.0.4 - Validate v3.7.15.'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
+    objects:
+      role:
+        - name: 'forgejo'
+          description: 'Forgejo installation from public release tarball.'
+          namespace: null
+        - name: 'gcp_ddns'
+          description: 'GCP Dynamic DNS updater.'
+          namespace: null
+        - name: 'maria'
+          description: 'Manage Maria databases.'
+          namespace: null
+        - name: 'mox'
+          description: 'Manage Mox (Mail) server.'
+          namespace: null
+        - name: 'nginx'
+          description: 'NGINX installation from public release tarball.'
+          namespace: null
+        - name: 'pihole'
+          description:
+            'PiHole installation from public release.'
+          namespace: null
+        - name: 'postgres'
+          description: 'Manage Postgres databases.'
+          namespace: null
+        - name: 'traefik'
+          description: 'Application Proxy Server.'
+          namespace: null
+        - name: 'vsftpd'
+          description: 'VSFTPd service configuration.'
+          namespace: null
   1.0.4:
     release_date: '2026-10-07'
     codename: '2026-10-07'
