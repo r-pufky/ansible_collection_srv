@@ -1,6 +1,58 @@
 ---
 ancestor: 0.6.6
 releases:
+  1.2.0:
+    release_date: '2026-10-23'
+    codename: '2026-10-23'
+    changes:
+      release_summary: 'Add imapsync role.'
+      major_changes:
+        - 'roles/imapsync - 1.0.0 - Initial release.'
+      minor_changes:
+        - 'N/A'
+      breaking_changes:
+        - 'N/A'
+      deprecated_features:
+        - 'N/A'
+      removed_features:
+        - 'N/A'
+      security_fixes:
+        - 'N/A'
+      bugfixes:
+        - 'N/A'
+    objects:
+      role:
+        - name: 'forgejo'
+          description: 'Forgejo installation from public release tarball.'
+          namespace: null
+        - name: 'gcp_ddns'
+          description: 'GCP Dynamic DNS updater.'
+          namespace: null
+        - name: 'imapsync'
+          description: 'IMAP transfer tool.'
+          namespace: null
+        - name: 'maria'
+          description: 'Manage Maria databases.'
+          namespace: null
+        - name: 'mox'
+          description: 'Manage Mox (Mail) server.'
+          namespace: null
+        - name: 'nginx'
+          description: 'NGINX installation from public release tarball.'
+          namespace: null
+        - name: 'pihole'
+          description:
+            'PiHole installation from public release.'
+          namespace: null
+        - name: 'postgres'
+          description: 'Manage Postgres databases.'
+          namespace: null
+        - name: 'traefik'
+          description: 'Application Proxy Server.'
+          namespace: null
+        - name: 'vsftpd'
+          description: 'VSFTPd service configuration.'
+          namespace: null
   1.1.0:
     release_date: '2026-10-21'
     codename: '2026-10-21'
